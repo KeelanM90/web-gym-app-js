@@ -52,6 +52,18 @@ const accounts = {
     }
   },
 
+  update(request, response) {
+    const user = userstore.getUserByEmail(request.body.email);
+    if (user && user.password === request.body.password) {
+      response.cookie('id', user.id);
+      logger.info(`logging in ${user.email}`);
+      response.redirect('/dashboard');
+    } else {
+      logger.info('Incorrect password entered or user does not exist');
+      response.redirect('/login');
+    }
+  },
+
   getCurrentUser(request) {
     const userId = request.cookies.id;
     return userstore.getUserById(userId);

@@ -2,17 +2,16 @@
 
 const accounts = require ('./accounts.js');
 const logger = require('../utils/logger');
-const uuid = require('uuid');
 
-const dashboard = {
+const profile = {
   index(request, response) {
-    logger.info('dashboard rendering');
+    logger.info('profile rendering');
     const viewData = {
-      title: 'Gym App Dashboard',
+      title: 'Profile Settings',
       user: accounts.getCurrentUser(request),
     };
-    response.render('dashboard', viewData);
+    response.render('profile', viewData);
   },
 };
 
-module.exports = dashboard;
+module.exports = profile;
