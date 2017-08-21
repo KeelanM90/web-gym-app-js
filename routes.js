@@ -12,12 +12,13 @@ router.get('/', accounts.index);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
 router.get('/logout', accounts.logout);
-router.get('/profile', profile.index);
+
 router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
+router.post('/update/:id', accounts.update);
 
 router.get('/dashboard', dashboard.index);
-
 router.get('/about', about.index);
+router.get('/profile', profile.index);
 
 module.exports = router;

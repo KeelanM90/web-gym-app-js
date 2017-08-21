@@ -53,15 +53,18 @@ const accounts = {
   },
 
   update(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
-    if (user && user.password === request.body.password) {
-      response.cookie('id', user.id);
-      logger.info(`logging in ${user.email}`);
-      response.redirect('/dashboard');
-    } else {
-      logger.info('Incorrect password entered or user does not exist');
-      response.redirect('/login');
-    }
+    const user = accounts.getCurrentUser(request);
+
+    user.name = request.body.name;
+    user.password = request.body.password;
+    user.gender = request.body.gender;
+    user.email = request.body.email;
+    user.address = request.body.address;
+    user.height = request.body.height;
+    user.weight = request.body.weight;
+
+    logger.info(`updating ${user.email}`);
+    response.redirect('/dashboard');
   },
 
   getCurrentUser(request) {
