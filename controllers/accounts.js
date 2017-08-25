@@ -64,6 +64,7 @@ const accounts = {
     user.weight = request.body.weight;
 
     logger.info(`updating ${user.email}`);
+    userstore.store.save();
     response.redirect('/dashboard');
   },
 

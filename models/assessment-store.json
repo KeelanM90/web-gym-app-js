@@ -1,0 +1,35 @@
+{
+  "usersassessments": [
+    {
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "assessments": [
+        {
+          "assessmentid": "53a149ba-6d0c-4300-9d46-d835177a36d2",
+          "date": "Wed, 17 May 2017 16:00:00 GMT",
+          "weight": 134,
+          "chest": 44,
+          "thigh": 30,
+          "upperArm": 27,
+          "waist": 38,
+          "hips": 42,
+          "comment": "What happened?"
+        },
+        {
+          "assessmentid": "53a149ba-6d0c-4300-9d46-d835177a36d1",
+          "date": "Mon, 24 Apr 2017 14:26:40 GMT",
+          "weight": 126,
+          "chest": 44,
+          "thigh": 30,
+          "upperArm": 27,
+          "waist": 38,
+          "hips": 42,
+          "comment": "Good job Homer!"
+        }
+      ]
+    },
+    {
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "assessments": []
+    }
+  ]
+}

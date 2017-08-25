@@ -20,5 +20,6 @@ router.post('/update/:id', accounts.update);
 router.get('/dashboard', dashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);
+router.get('/dashboard/:userid/deleteassessment/:assessmentid', dashboard.deleteAssessment);
 
 module.exports = router;

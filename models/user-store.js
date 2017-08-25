@@ -14,6 +14,7 @@ const userStore = {
 
   addUser(user) {
     this.store.add(this.collection, user);
+    this.store.save();
   },
 
   getUserById(id) {
