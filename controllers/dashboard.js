@@ -2,6 +2,7 @@
 
 const accounts = require('./accounts');
 const logger = require('../utils/logger');
+const dateformat = require('dateformat');
 const uuid = require('uuid');
 const assessmentstore = require('../models/assessment-store');
 
@@ -15,6 +16,22 @@ const dashboard = {
       assessments: assessmentstore.getAssessments(loggedinuser.id),
     };
     response.render('dashboard', viewData);
+  },
+
+  addAssessment(request, response) {
+    const userId = request.params.userid;
+    const assessment = {
+      assessmentid: uuid(),
+      date: dateformat(new Date(), 'ddd, dd mmm yyyy HH:mm:ss Z'),
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
+    };
+    assessmentstore.addAssessment(userId, assessment);
+    response.redirect('/dashboard/');
   },
 
   deleteAssessment(request, response) {

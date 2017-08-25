@@ -21,6 +21,12 @@ const assessmentStore = {
     return assessments;
   },
 
+  addAssessment(userid, assessment) {
+    const assessments = this.getAssessments(userid);
+    assessments.push(assessment);
+    this.store.save();
+  },
+
   removeAssessment(userid, assessmentid) {
     const assessments = this.getAssessments(userid);
     _.remove(assessments, { assessmentid: assessmentid });
