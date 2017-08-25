@@ -3,6 +3,7 @@
 const userstore = require('../models/user-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
+const assessmentstore = require('../models/assessment-store');
 
 const accounts = {
 
@@ -37,6 +38,7 @@ const accounts = {
     user.id = uuid();
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
+    assessmentstore.createEmptyArray(user.id);
     response.redirect('/');
   },
 
