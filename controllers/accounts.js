@@ -74,6 +74,10 @@ const accounts = {
     const userId = request.cookies.id;
     return userstore.getUserById(userId);
   },
+
+  getUser(userid) {
+    return userstore.getUserById(userid);
+  },
 };
 
 module.exports = accounts;

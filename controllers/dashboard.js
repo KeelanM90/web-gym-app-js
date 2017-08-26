@@ -5,6 +5,7 @@ const logger = require('../utils/logger');
 const dateformat = require('dateformat');
 const uuid = require('uuid');
 const assessmentstore = require('../models/assessment-store');
+const analyticshelper = require('../utils/analyticshelper');
 
 const dashboard = {
   index(request, response) {
@@ -14,6 +15,9 @@ const dashboard = {
       title: 'Gym App Dashboard',
       user: loggedinuser,
       assessments: assessmentstore.getAssessments(loggedinuser.id),
+      bmi: analyticshelper.calculateBMI(loggedinuser),
+      bmiCategory: analyticshelper.getBMICategory(loggedinuser),
+      idealWeightIndicator: analyticshelper.isIdealBodyWeight(loggedinuser),
     };
     response.render('dashboard', viewData);
   },
