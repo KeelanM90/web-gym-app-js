@@ -4,65 +4,9 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
-          "assessmentid": "2034f5f7-6526-4d78-8091-e0d1a7bc208c",
-          "date": "Sat, 26 Aug 2017 16:08:34 GMT",
-          "weight": "127",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1",
-          "trend": "blue"
-        },
-        {
-          "assessmentid": "c232b12f-ff4f-41db-aa2f-11ef2a2abf7c",
-          "date": "Sat, 26 Aug 2017 16:08:28 GMT",
-          "weight": "127",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1",
-          "trend": "red"
-        },
-        {
-          "assessmentid": "df9d8473-f876-4702-bdd3-c4d3796b9f3a",
-          "date": "Sat, 26 Aug 2017 16:08:24 GMT",
-          "weight": "126",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1",
-          "trend": "green"
-        },
-        {
-          "assessmentid": "d962751f-bc80-44d9-951e-09455fb03eb6",
-          "date": "Sat, 26 Aug 2017 16:08:11 GMT",
-          "weight": "128",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1",
-          "trend": "red"
-        },
-        {
-          "assessmentid": "53a149ba-6d0c-4300-9d46-d835177a36d1",
-          "date": "Mon, 24 Apr 2017 14:26:40 GMT",
-          "weight": 126,
-          "chest": 44,
-          "thigh": 30,
-          "upperArm": 27,
-          "waist": 38,
-          "hips": 42,
-          "comment": "Good job Homer!",
-          "trend": "red"
-        },
-        {
-          "assessmentid": "a015f2f4-591f-4da2-8491-6508df6c954d",
-          "date": "Sat, 26 Aug 2017 16:08:48 GMT",
-          "weight": "126",
+          "assessmentid": "fed7b9d8-b53c-47a9-8986-f193b31cb30f",
+          "date": "Sat, 26 Aug 2017 17:53:31 GMT",
+          "weight": "68",
           "chest": "1",
           "thigh": "1",
           "upperArm": "1",

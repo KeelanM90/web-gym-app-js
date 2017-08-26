@@ -26,7 +26,7 @@ const dashboard = {
     const userId = request.params.userid;
     const assessment = {
       assessmentid: uuid(),
-      date: dateformat(new Date(), 'ddd, dd mmm yyyy HH:mm:ss Z'),
+      date: dateformat(new Date(), 'ddd, dd mmm yyyy HH:MM:ss Z'),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
