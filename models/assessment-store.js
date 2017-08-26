@@ -24,6 +24,36 @@ const assessmentStore = {
     return assessments;
   },
 
+  getAssessmentsTrends(user, idealWeight) {
+    let assessments = this.getAssessments(user.id);
+    for (let i = 0; i < assessments.length; i++) {
+      let lastWeight = user.weight;
+      if (i < assessments.length - 1) {
+        lastWeight = assessments[i + 1].weight;
+      };
+
+      let deltaCurrent = assessments[i].weight - idealWeight;
+      let deltaPrevious = lastWeight - idealWeight;
+
+      if (deltaCurrent < 0) {
+        deltaCurrent = -deltaCurrent;
+      }
+      if (deltaPrevious < 0) {
+        deltaPrevious = -deltaPrevious;
+      }
+
+      if (deltaPrevious < deltaCurrent) {
+        assessments[i].trend = 'red';
+      } else if (deltaPrevious > deltaCurrent) {
+        assessments[i].trend = 'green';
+      } else {
+        assessments[i].trend = 'blue';
+      }
+    };
+
+    return assessments;
+  },
+
   createEmptyArray(userid) {
     const data = {
       userid: userid,

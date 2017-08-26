@@ -14,7 +14,7 @@ const dashboard = {
     const viewData = {
       title: 'Gym App Dashboard',
       user: loggedinuser,
-      assessments: assessmentstore.getAssessments(loggedinuser.id),
+      assessments: assessmentstore.getAssessmentsTrends(loggedinuser, analyticshelper.idealBodyWeight(loggedinuser)),
       bmi: analyticshelper.calculateBMI(loggedinuser),
       bmiCategory: analyticshelper.getBMICategory(loggedinuser),
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(loggedinuser),

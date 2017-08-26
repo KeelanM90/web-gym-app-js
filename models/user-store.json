@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Homer Simpson2",
+      "name": "Homer Simpson",
       "gender": "Male",
       "email": "homer@simpson.com",
       "password": "secret",

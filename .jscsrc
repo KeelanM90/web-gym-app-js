@@ -81,5 +81,7 @@
   "maximumLineLength": {
     "value": 140,
     "allExcept": ["urlComments"]
-  }
+  },
+  "excludeFiles": [
+  ]
 }
