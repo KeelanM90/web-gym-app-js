@@ -8,7 +8,8 @@
       "password": "secret",
       "address": "Springfield, USA",
       "height": "1.72",
-      "weight": "70"
+      "weight": "70",
+      "assessmentssize": 2
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -18,7 +19,23 @@
       "password": "secret",
       "address": "Springfield, USA",
       "height": "1.52",
-      "weight": "55"
+      "weight": "55",
+      "assessmentssize": 0
+    }
+  ],
+  "trainers": [
+    {
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "name": "Ned Flanders",
+      "gender": "Male",
+      "email": "ned@flanders.com",
+      "password": "secret"
+    },
+    {
+      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
+      "name": "Bart Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
     }
   ]
 }

@@ -74,6 +74,11 @@ const assessmentStore = {
     _.remove(assessments, { assessmentid: assessmentid });
     this.store.save();
   },
+
+  deleteUsersAssessments(userid) {
+    _.remove(this.store.findAll(this.collection), { userid: userid });
+    this.store.save();
+  },
 };
 
 module.exports = assessmentStore;

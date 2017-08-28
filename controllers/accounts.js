@@ -44,10 +44,15 @@ const accounts = {
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
+    const trainer = userstore.getTrainerByEmail(request.body.email);
     if (user && user.password === request.body.password) {
       response.cookie('id', user.id);
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
+    } else if (trainer && trainer.password === request.body.password) {
+      response.cookie('id', trainer.id);
+      logger.info(`logging in ${trainer.email}`);
+      response.redirect('/trainerdashboard');
     } else {
       logger.info('Incorrect password entered or user does not exist');
       response.redirect('/login');
@@ -73,6 +78,18 @@ const accounts = {
   getCurrentUser(request) {
     const userId = request.cookies.id;
     return userstore.getUserById(userId);
+  },
+
+  getCurrentTrainer(request) {
+    const trainerId = request.cookies.id;
+    return userstore.getTrainerById(trainerId);
+  },
+
+  deleteMember(request, response) {
+    const userId = request.params.id;
+    assessmentstore.deleteUsersAssessments(userId);
+    userstore.deleteUser(userId);
+    response.redirect('/trainerdashboard/');
   },
 
   getUser(userid) {
