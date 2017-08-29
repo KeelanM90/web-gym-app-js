@@ -23,9 +23,10 @@ router.get('/dashboard', dashboard.index);
 router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);
-router.get('/viewmember/:memberid', trainerdashboard.viewMember);
+router.get('/viewmember/:id', trainerdashboard.viewMember);
 
 router.post('/dashboard/:id/addAssessment', dashboard.addAssessment);
+router.post('/updateComment/:id/:assessmentId', trainerdashboard.updateComment);
 router.get('/dashboard/:memberid/deleteassessment/:assessmentid', dashboard.deleteAssessment);
 
 module.exports = router;

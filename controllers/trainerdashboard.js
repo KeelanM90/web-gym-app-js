@@ -14,6 +14,7 @@ const trainerdashboard = {
     for (let i = 0; i < members.length; i++) {
       members[i].assessmentssize = assessmentstore.getAssessments(members[i].id).length;
     };
+
     const viewData = {
       title: 'Gym App Trainer Dashboard',
       trainer: loggedintrainer,
@@ -24,7 +25,7 @@ const trainerdashboard = {
 
   viewMember(request, response) {
     logger.info('Member view rendering');
-    const memberId = request.params.memberid;
+    const memberId = request.params.id;
     const member = accounts.getMember(memberId);
     const viewData = {
       title: 'Gym App Trainer Dashboard',
@@ -35,6 +36,18 @@ const trainerdashboard = {
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(member),
     };
     response.render('viewmember', viewData);
+  },
+
+  updateComment(request, response) {
+    //logger.info(request);
+    const assessmentId = request.params.assessmentId;
+    const memberId = request.params.id;
+    const comment = request.body.comment;
+
+    assessmentstore.setComment(memberId, assessmentId, comment);
+
+    logger.info('Updating comment');
+    response.redirect(`/viewMember/${memberId}`);
   },
 };
 

@@ -80,6 +80,14 @@ const assessmentStore = {
     _.remove(this.store.findAll(this.collection), { memberId: memberId });
     this.store.save();
   },
+
+  setComment(memberId, assessmentId, comment) {
+    const assessments = this.getAssessments(memberId);
+    const assessment = _.find(assessments, { assessmentId: assessmentId });
+
+    assessment.comment = comment;
+    this.store.save();
+  },
 };
 
 module.exports = assessmentStore;
