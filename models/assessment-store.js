@@ -6,11 +6,11 @@ const logger = require('../utils/logger');
 
 const assessmentStore = {
 
-  store: new JsonStore('./models/assessment-store.json', { usersassessments: [] }),
-  collection: 'usersassessments',
+  store: new JsonStore('./models/assessment-store.json', { membersAssessments: [] }),
+  collection: 'membersAssessments',
 
-  getAssessments(userid) {
-    const assessments = this.store.findOneBy(this.collection, { userid: userid }).assessments;
+  getAssessments(memberId) {
+    const assessments = this.store.findOneBy(this.collection, { memberId: memberId }).assessments;
     if (assessments.length > 0) {
       assessments.sort(function (a, b) {
             const dateA = new Date(a.date);
@@ -24,10 +24,10 @@ const assessmentStore = {
     return assessments;
   },
 
-  getAssessmentsTrends(user, idealWeight) {
-    let assessments = this.getAssessments(user.id);
+  getAssessmentsTrends(member, idealWeight) {
+    let assessments = this.getAssessments(member.id);
     for (let i = 0; i < assessments.length; i++) {
-      let lastWeight = user.weight;
+      let lastWeight = member.weight;
       if (i < assessments.length - 1) {
         lastWeight = assessments[i + 1].weight;
       };
@@ -38,6 +38,7 @@ const assessmentStore = {
       if (deltaCurrent < 0) {
         deltaCurrent = -deltaCurrent;
       }
+
       if (deltaPrevious < 0) {
         deltaPrevious = -deltaPrevious;
       }
@@ -54,29 +55,29 @@ const assessmentStore = {
     return assessments;
   },
 
-  createEmptyArray(userid) {
+  createEmptyArray(memberId) {
     const data = {
-      userid: userid,
+      memberId: memberId,
       assessments: [],
     };
     this.store.findAll(this.collection).push(data);
     this.store.save();
   },
 
-  addAssessment(userid, assessment) {
-    const assessments = this.getAssessments(userid);
+  addAssessment(memberId, assessment) {
+    const assessments = this.getAssessments(memberId);
     assessments.push(assessment);
     this.store.save();
   },
 
-  removeAssessment(userid, assessmentid) {
-    const assessments = this.getAssessments(userid);
-    _.remove(assessments, { assessmentid: assessmentid });
+  removeAssessment(memberId, assessmentId) {
+    const assessments = this.getAssessments(memberId);
+    _.remove(assessments, { assessmentId: assessmentId });
     this.store.save();
   },
 
-  deleteUsersAssessments(userid) {
-    _.remove(this.store.findAll(this.collection), { userid: userid });
+  deleteMembersAssessments(memberId) {
+    _.remove(this.store.findAll(this.collection), { memberId: memberId });
     this.store.save();
   },
 };

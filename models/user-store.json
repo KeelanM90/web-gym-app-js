@@ -1,5 +1,5 @@
 {
-  "users": [
+  "members": [
     {
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Homer Simpson",
@@ -18,7 +18,7 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "address": "Springfield, USA",
-      "height": "1.52",
+      "height": "1.6",
       "weight": "55",
       "assessmentssize": 0
     }

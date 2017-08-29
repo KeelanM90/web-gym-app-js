@@ -22,7 +22,7 @@ const accounts = {
   },
 
   logout(request, response) {
-    response.cookie('userid', '');
+    response.cookie('memberid', '');
     response.redirect('/');
   },
 
@@ -34,20 +34,20 @@ const accounts = {
   },
 
   register(request, response) {
-    const user = request.body;
-    user.id = uuid();
-    userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
-    assessmentstore.createEmptyArray(user.id);
+    const member = request.body;
+    member.id = uuid();
+    userstore.addMember(member);
+    logger.info(`registering ${member.email}`);
+    assessmentstore.createEmptyArray(member.id);
     response.redirect('/');
   },
 
   authenticate(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
+    const member = userstore.getMemberByEmail(request.body.email);
     const trainer = userstore.getTrainerByEmail(request.body.email);
-    if (user && user.password === request.body.password) {
-      response.cookie('id', user.id);
-      logger.info(`logging in ${user.email}`);
+    if (member && member.password === request.body.password) {
+      response.cookie('id', member.id);
+      logger.info(`logging in ${member.email}`);
       response.redirect('/dashboard');
     } else if (trainer && trainer.password === request.body.password) {
       response.cookie('id', trainer.id);
@@ -60,24 +60,24 @@ const accounts = {
   },
 
   update(request, response) {
-    const user = accounts.getCurrentUser(request);
+    const member = accounts.getCurrentMember(request);
 
-    user.name = request.body.name;
-    user.password = request.body.password;
-    user.gender = request.body.gender;
-    user.email = request.body.email;
-    user.address = request.body.address;
-    user.height = request.body.height;
-    user.weight = request.body.weight;
+    member.name = request.body.name;
+    member.password = request.body.password;
+    member.gender = request.body.gender;
+    member.email = request.body.email;
+    member.address = request.body.address;
+    member.height = request.body.height;
+    member.weight = request.body.weight;
 
-    logger.info(`updating ${user.email}`);
+    logger.info(`updating ${member.email}`);
     userstore.store.save();
     response.redirect('/dashboard');
   },
 
-  getCurrentUser(request) {
-    const userId = request.cookies.id;
-    return userstore.getUserById(userId);
+  getCurrentMember(request) {
+    const memberId = request.cookies.id;
+    return userstore.getMemberById(memberId);
   },
 
   getCurrentTrainer(request) {
@@ -86,14 +86,14 @@ const accounts = {
   },
 
   deleteMember(request, response) {
-    const userId = request.params.id;
-    assessmentstore.deleteUsersAssessments(userId);
-    userstore.deleteUser(userId);
+    const memberId = request.params.id;
+    assessmentstore.deleteMembersAssessments(memberId);
+    userstore.deleteMember(memberId);
     response.redirect('/trainerdashboard/');
   },
 
-  getUser(userid) {
-    return userstore.getUserById(userid);
+  getMember(memberId) {
+    return userstore.getMemberById(memberId);
   },
 };
 

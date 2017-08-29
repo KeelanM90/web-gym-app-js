@@ -1,6 +1,6 @@
 'use strict';
 
-const accounts = require ('./accounts.js');
+const accounts = require('./accounts.js');
 const logger = require('../utils/logger');
 
 const profile = {
@@ -8,7 +8,7 @@ const profile = {
     logger.info('profile rendering');
     const viewData = {
       title: 'Profile Settings',
-      user: accounts.getCurrentUser(request),
+      member: accounts.getCurrentMember(request),
     };
     response.render('profile', viewData);
   },

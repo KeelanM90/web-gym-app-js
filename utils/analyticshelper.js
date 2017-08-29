@@ -7,14 +7,15 @@ const analytics = {
   /**
    * This method calculates the BMI for the member.
    *
-   * @param user the user to be analyzed
+   * @param member the member to be analyzed
    * @return the BMI value for the member. The number returned is truncated to two decimal places.
    */
-  calculateBMI(user) {
-    const height = user.height;
-    const weight = this.getCurrentWeight(user);
+  calculateBMI(member) {
+    const height = member.height;
+    const weight = this.getCurrentWeight(member);
     return ((weight / height) / height).toFixed(2);
   },
+
   /**
    * This method determines the BMI category that the member belongs to.
    *
@@ -29,17 +30,17 @@ const analytics = {
    * BMI between      35   (inclusive) and 40   (exclusive) is "SEVERELY OBESE"
    * BMI greater than 40   (inclusive)                      is "VERY SEVERELY OBESE"
    *
-   * @param user the user that requires their BMI category
+   * @param member the member that requires their BMI category
    * @return the BMI category that the member belongs to.
    */
-  getBMICategory(user) {
-    const bmi = this.calculateBMI(user);
+  getBMICategory(member) {
+    const bmi = this.calculateBMI(member);
     if (bmi < 15) {
       return 'VERY SEVERELY UNDERWEIGHT';
     } else if (bmi >= 15 && bmi < 16) {
       return 'SEVERELY UNDERWEIGHT';
     } else if (bmi >= 16 && bmi < 18.5) {
-      return 'UNDERWEIGHT"';
+      return 'UNDERWEIGHT';
     } else if (bmi >= 18.5 && bmi < 25) {
       return 'NORMAL';
     } else if (bmi >= 25 && bmi < 30) {
@@ -58,18 +59,18 @@ const analytics = {
   /**
    * Calculates the ideal body weight based on the devine formula
    *
-   * @param user The user the calculation is to be performed on
-   * @return The users ideal body weight
+   * @param member The member the calculation is to be performed on
+   * @return The members ideal body weight
    */
-  idealBodyWeight(user) {
+  idealBodyWeight(member) {
     let genderWeight = 0;
 
-    let heightInInches = this.convertHeightMetresToInches(user.height);
+    let heightInInches = this.convertHeightMetresToInches(member.height);
     if (heightInInches < 60) {
       heightInInches = 60;
     }
 
-    if (user.gender === 'Male') {
+    if (member.gender === 'Male') {
       genderWeight = 50;
     } else {
       genderWeight = 45.5;
@@ -83,13 +84,13 @@ const analytics = {
    * This method returns a string of semantic ui classes to indicate if the member has an
    * ideal body weight based on the Devine formula.
    *
-   * @param user The user that requires their ideal weight indicator
+   * @param member The member that requires their ideal weight indicator
    * @return returns a string of semantic classes based on the calculated idealBodyWeight.
    */
-  isIdealBodyWeight(user) {
-    const weight = this.getCurrentWeight(user);
+  isIdealBodyWeight(member) {
+    const weight = this.getCurrentWeight(member);
 
-    const idealBodyWeight = this.idealBodyWeight(user);
+    const idealBodyWeight = this.idealBodyWeight(member);
 
     if (weight >= (idealBodyWeight - 2) && weight <= (idealBodyWeight + 2)) {
       return 'green';
@@ -103,17 +104,17 @@ const analytics = {
   },
 
   /**
-   * This method finds the last recorded weight for a user
+   * This method finds the last recorded weight for a member
    *
-   * @param user the user that the current weight is required for
-   * @returns the current weight of the user
+   * @param member the member that the current weight is required for
+   * @returns the current weight of the member
    */
-  getCurrentWeight(user) {
-    const assessments = assessmentstore.getAssessments(user.id);
+  getCurrentWeight(member) {
+    const assessments = assessmentstore.getAssessments(member.id);
     if (assessments.length > 0) {
       return assessments[0].weight;
     } else {
-      return user.weight;
+      return member.weight;
     }
   },
 

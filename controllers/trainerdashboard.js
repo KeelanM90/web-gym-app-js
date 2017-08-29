@@ -10,29 +10,29 @@ const trainerdashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedintrainer = accounts.getCurrentTrainer(request);
-    const users = userstore.getAllUsers();
-    for (let i = 0; i < users.length; i++) {
-      users[i].assessmentssize = assessmentstore.getAssessments(users[i].id).length;
+    const members = userstore.getAllMembers();
+    for (let i = 0; i < members.length; i++) {
+      members[i].assessmentssize = assessmentstore.getAssessments(members[i].id).length;
     };
     const viewData = {
       title: 'Gym App Trainer Dashboard',
       trainer: loggedintrainer,
-      users: users,
+      members: members,
     };
     response.render('trainerdashboard', viewData);
   },
 
   viewMember(request, response) {
     logger.info('Member view rendering');
-    const userId = request.params.userid;
-    const user = accounts.getUser(userId);
+    const memberId = request.params.memberid;
+    const member = accounts.getMember(memberId);
     const viewData = {
       title: 'Gym App Trainer Dashboard',
-      user: user,
-      assessments: assessmentstore.getAssessments(userId),
-      bmi: analyticshelper.calculateBMI(user),
-      bmiCategory: analyticshelper.getBMICategory(user),
-      idealWeightIndicator: analyticshelper.isIdealBodyWeight(user),
+      member: member,
+      assessments: assessmentstore.getAssessments(memberId),
+      bmi: analyticshelper.calculateBMI(member),
+      bmiCategory: analyticshelper.getBMICategory(member),
+      idealWeightIndicator: analyticshelper.isIdealBodyWeight(member),
     };
     response.render('viewmember', viewData);
   },

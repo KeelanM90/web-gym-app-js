@@ -10,22 +10,22 @@ const analyticshelper = require('../utils/analyticshelper');
 const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
-    const loggedinuser = accounts.getCurrentUser(request);
+    const loggedInMember = accounts.getCurrentMember(request);
     const viewData = {
       title: 'Gym App Dashboard',
-      user: loggedinuser,
-      assessments: assessmentstore.getAssessmentsTrends(loggedinuser, analyticshelper.idealBodyWeight(loggedinuser)),
-      bmi: analyticshelper.calculateBMI(loggedinuser),
-      bmiCategory: analyticshelper.getBMICategory(loggedinuser),
-      idealWeightIndicator: analyticshelper.isIdealBodyWeight(loggedinuser),
+      member: loggedInMember,
+      assessments: assessmentstore.getAssessmentsTrends(loggedInMember, analyticshelper.idealBodyWeight(loggedInMember)),
+      bmi: analyticshelper.calculateBMI(loggedInMember),
+      bmiCategory: analyticshelper.getBMICategory(loggedInMember),
+      idealWeightIndicator: analyticshelper.isIdealBodyWeight(loggedInMember),
     };
     response.render('dashboard', viewData);
   },
 
   addAssessment(request, response) {
-    const userId = request.params.userid;
+    const memberId = request.params.id;
     const assessment = {
-      assessmentid: uuid(),
+      assessmentId: uuid(),
       date: dateformat(new Date(), 'ddd, dd mmm yyyy HH:MM:ss Z'),
       weight: request.body.weight,
       chest: request.body.chest,
@@ -34,14 +34,14 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
     };
-    assessmentstore.addAssessment(userId, assessment);
+    assessmentstore.addAssessment(memberId, assessment);
     response.redirect('/dashboard/');
   },
 
   deleteAssessment(request, response) {
-    const userId = request.params.userid;
-    const assessmentid = request.params.assessmentid;
-    assessmentstore.removeAssessment(userId, assessmentid);
+    const memberId = request.params.memberid;
+    const assessmentId = request.params.assessmentid;
+    assessmentstore.removeAssessment(memberId, assessmentId);
     response.redirect('/dashboard/');
   },
 };

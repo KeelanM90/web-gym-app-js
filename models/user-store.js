@@ -5,21 +5,21 @@ const JsonStore = require('./json-store');
 
 const userStore = {
 
-  store: new JsonStore('./models/user-store.json', { users: [] }),
+  store: new JsonStore('./models/user-store.json', { members: [] }),
   trainerstore: new JsonStore('./models/user-store.json', { trainers: [] }),
-  collection: 'users',
+  collection: 'members',
   trainercollection: 'trainers',
 
-  getAllUsers() {
+  getAllMembers() {
     return this.store.findAll(this.collection);
   },
 
-  addUser(user) {
-    this.store.add(this.collection, user);
+  addMember(member) {
+    this.store.add(this.collection, member);
     this.store.save();
   },
 
-  getUserById(id) {
+  getMemberById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
@@ -27,7 +27,7 @@ const userStore = {
     return this.trainerstore.findOneBy(this.trainercollection, { id: id });
   },
 
-  getUserByEmail(email) {
+  getMemberByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
 
@@ -35,8 +35,8 @@ const userStore = {
     return this.trainerstore.findOneBy(this.trainercollection, { email: email });
   },
 
-  deleteUser(user) {
-    _.remove(this.getAllUsers(), this.getUserById(user));
+  deleteMember(member) {
+    _.remove(this.getAllMembers(), this.getMemberById(member));
     this.store.save();
   },
 };

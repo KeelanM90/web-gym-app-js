@@ -3,7 +3,7 @@
 <div class="ui raised segment">
     {{> useranalytics}}
 
-    <form class="ui segment form" action="/dashboard/{{user.id}}/addassessment" method="POST">
+    <form class="ui segment form" action="/dashboard/{{member.id}}/addassessment" method="POST">
         <h3 class="ui header">Add Assessment</h3>
         <div class="three fields">
             <div class="field">
@@ -68,7 +68,7 @@
             </td>
             <td>{{comment}}</td>
             <td>
-                <a href="/dashboard/{{../user.id}}/deleteassessment/{{assessmentid}}" class="ui icon button">
+                <a href="/dashboard/{{../member.id}}/deleteassessment/{{assessmentId}}" class="ui icon button">
                     <i class="icon trash"></i>
                 </a>
             </td>
