@@ -1,42 +1,7 @@
 {{> menu id="dashboard"}}
 
 <div class="ui raised segment">
-    <div class="ui center aligned segment">
-        <div class="ui four statistics">
-            <div class="statistic">
-                <div class="value">
-                    <i class="user icon"></i>
-                </div>
-                <div class="label">
-                    {{user.name}}
-                </div>
-            </div>
-            <div class="statistic">
-                <div class="value">
-                    <i class="{{idealWeightIndicator}} dashboard icon"></i>
-                </div>
-                <div class="label">
-                    Ideal Weight Indicator
-                </div>
-            </div>
-            <div class="statistic">
-                <div class="value">
-                    <i class="heartbeat icon"></i>{{bmi}}
-                </div>
-                <div class="label">
-                    BMI
-                </div>
-            </div>
-            <div class="statistic">
-                <div class="value">
-                    <i class="doctor icon"></i>
-                </div>
-                <div class="label">
-                    {{bmiCategory}}
-                </div>
-            </div>
-        </div>
-    </div>
+    {{> useranalytics}}
 
     <form class="ui segment form" action="/dashboard/{{user.id}}/addassessment" method="POST">
         <h3 class="ui header">Add Assessment</h3>

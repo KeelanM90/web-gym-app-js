@@ -4,6 +4,7 @@ const accounts = require('./accounts');
 const logger = require('../utils/logger');
 const userstore = require('../models/user-store');
 const assessmentstore = require('../models/assessment-store');
+const analyticshelper = require('../utils/analyticshelper');
 
 const trainerdashboard = {
   index(request, response) {
@@ -19,6 +20,21 @@ const trainerdashboard = {
       users: users,
     };
     response.render('trainerdashboard', viewData);
+  },
+
+  viewMember(request, response) {
+    logger.info('Member view rendering');
+    const userId = request.params.userid;
+    const user = accounts.getUser(userId);
+    const viewData = {
+      title: 'Gym App Trainer Dashboard',
+      user: user,
+      assessments: assessmentstore.getAssessments(userId),
+      bmi: analyticshelper.calculateBMI(user),
+      bmiCategory: analyticshelper.getBMICategory(user),
+      idealWeightIndicator: analyticshelper.isIdealBodyWeight(user),
+    };
+    response.render('viewmember', viewData);
   },
 };
 

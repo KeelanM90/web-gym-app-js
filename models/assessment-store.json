@@ -4,6 +4,28 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
+          "assessmentid": "0d202860-1ac1-4863-9529-048bb76f0771",
+          "date": "Tue, 29 Aug 2017 08:59:34 GMT",
+          "weight": "64",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1",
+          "trend": "red"
+        },
+        {
+          "assessmentid": "3c5d5359-977d-4556-b103-d0d5a96c6aea",
+          "date": "Tue, 29 Aug 2017 08:59:10 GMT",
+          "weight": "68",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1",
+          "trend": "green"
+        },
+        {
           "assessmentid": "53a149ba-6d0c-4300-9d46-d835177a36d2",
           "date": "Wed, 17 May 2017 16:00:00 GMT",
           "weight": 134,
@@ -26,6 +48,16 @@
           "hips": 42,
           "comment": "Good job Homer!",
           "trend": "red"
+        },
+        {
+          "assessmentid": "f925e6c2-2aa0-4e31-8971-9e8a05e3ed4b",
+          "date": "Tue, 29 Aug 2017 08:59:45 GMT",
+          "weight": "65",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1"
         }
       ]
     },
