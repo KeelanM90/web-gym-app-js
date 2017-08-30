@@ -4,6 +4,9 @@
     <div class="ui two column row">
         <div class="ui column stacked segment">
             <h1 class="ui header">
+                {{#if member.img}}
+                    <img class="ui avatar image" src="{{member.img}}"/>
+                {{/if}}
                 Update Profile
             </h1>
             <form class="ui form" action="/update" method="POST" enctype="multipart/form-data">

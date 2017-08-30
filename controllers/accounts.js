@@ -74,13 +74,14 @@ const accounts = {
 
     if (picture != null) {
       userstore.addPicture(member, picture, function () {
+        userstore.store.save();
+        response.redirect('/dashboard');
       }
       );
+    } else {
+      userstore.store.save();
+      response.redirect('/dashboard');
     }
-
-    logger.info(`updating ${member.email}`);
-    userstore.store.save();
-    response.redirect('/dashboard');
   },
 
   getCurrentMember(request) {
