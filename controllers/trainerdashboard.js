@@ -47,7 +47,7 @@ const trainerdashboard = {
     assessmentstore.setComment(memberId, assessmentId, comment);
 
     logger.info('Updating comment');
-    response.redirect(`/viewMember/${memberId}`);
+    response.redirect(`/viewMember/` + memberId);
   },
 };
 

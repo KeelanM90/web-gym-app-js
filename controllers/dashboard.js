@@ -6,6 +6,7 @@ const dateformat = require('dateformat');
 const uuid = require('uuid');
 const assessmentstore = require('../models/assessment-store');
 const analyticshelper = require('../utils/analyticshelper');
+const handlebars = require('../utils/handlebarshelper.js');
 
 const dashboard = {
   index(request, response) {

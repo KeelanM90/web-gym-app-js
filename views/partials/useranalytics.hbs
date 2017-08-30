@@ -2,7 +2,11 @@
     <div class="ui four statistics">
         <div class="statistic">
             <div class="value">
-                <i class="user icon"></i>
+                {{#if member.img}}
+                    <img class="ui middle aligned circular image" src="{{member.img}}"/>
+                {{else}}
+                    <i class="{{toLowerCase member.gender}} icon"></i>
+                {{/if}}
             </div>
             <div class="label">
                 {{member.name}}

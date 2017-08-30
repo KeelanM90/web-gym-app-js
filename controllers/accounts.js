@@ -70,6 +70,14 @@ const accounts = {
     member.height = request.body.height;
     member.weight = request.body.weight;
 
+    const picture = request.files.picture;
+
+    if (picture != null) {
+      userstore.addPicture(member, picture, function () {
+      }
+      );
+    }
+
     logger.info(`updating ${member.email}`);
     userstore.store.save();
     response.redirect('/dashboard');

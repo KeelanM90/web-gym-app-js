@@ -2,6 +2,16 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+const cloudinary = require('cloudinary');
+
+try {
+  const env = require('../.data/.env.json');
+  cloudinary.config(env.cloudinary);
+}
+catch (e) {
+  logger.info('You must provide a Cloudinary credentials file - see README.md');
+  process.exit(1);
+}
 
 const userStore = {
 
@@ -38,6 +48,19 @@ const userStore = {
   deleteMember(member) {
     _.remove(this.getAllMembers(), this.getMemberById(member));
     this.store.save();
+  },
+
+  addPicture(member, imageFile, response) {
+    imageFile.mv('tempimage', err => {
+      if (!err) {
+        cloudinary.uploader.upload('tempimage', result => {
+          console.log(result);
+          member.img = result.url;
+          this.store.save();
+          response();
+        });
+      }
+    });
   },
 };
 
