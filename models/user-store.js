@@ -3,6 +3,7 @@
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 const cloudinary = require('cloudinary');
+const path = require('path');
 
 try {
   const env = require('../.data/.env.json');
@@ -51,6 +52,11 @@ const userStore = {
   },
 
   addPicture(member, imageFile, response) {
+    const id = path.parse(member.img);
+    cloudinary.api.delete_resources([id.name], function (result) {
+      console.log(result);
+    }
+    );
     imageFile.mv('tempimage', err => {
       if (!err) {
         cloudinary.uploader.upload('tempimage', result => {
