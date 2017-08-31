@@ -1,5 +1,6 @@
 'use strict';
 
+const uuid = require('uuid');
 const accounts = require('./accounts');
 const logger = require('../utils/logger');
 const classStore = require('../models/class-store');
@@ -16,6 +17,18 @@ const classes = {
       classes: classes,
     };
     response.render('classes', viewData);
+  },
+
+  addClass(request, response) {
+    const trainerId = request.params.trainerid;
+
+    const newClass = {
+      assessmentId: uuid(),
+      name: request.body.name,
+    };
+    classStore.addClass(trainerId, newClass);
+
+    response.redirect('/classes');
   },
 
   deleteClass(request, response) {

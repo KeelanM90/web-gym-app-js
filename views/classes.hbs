@@ -14,7 +14,7 @@
         <div class="content">
             <a class="header">{{name}}</a>
             <div class="meta">
-                <span>Joined in 2013</span>
+                <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
             </div>
             <div class="description">
                 {{description}}
@@ -36,7 +36,7 @@
     {{/each}}
     </div>
 
-    <form class="ui segment form" action="/addclass/{{trainer.id}}" method="POST">
+    <form class="ui segment form" action="classes/{{trainer.id}}/addclass" method="POST">
         <h3 class="ui header">Add Class</h3>
         <div class="two fields">
             <div class="field">

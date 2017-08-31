@@ -38,6 +38,10 @@
               "enrolledMembers": []
             }
           ]
+        },
+        {
+          "assessmentId": "f59f3f73-d672-4df7-a267-052c4c468159",
+          "name": "Test"
         }
       ]
     }
