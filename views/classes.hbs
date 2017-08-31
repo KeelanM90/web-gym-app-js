@@ -1,8 +1,39 @@
 {{> trainermenu id="classes"}}
 
 <div class="ui raised segment">
+    <div class="ui centered three stackable cards">
+    {{#each classes}}
+    <div class="ui card">
+        <div class="image">
+            {{#if img}}
+                <img src="{{img}}">
+            {{else}}
+                <img src="https://semantic-ui.com/images/wireframe/image.png">
+            {{/if}}
+        </div>
+        <div class="content">
+            <a class="header">{{name}}</a>
+            <div class="meta">
+                <span>Joined in 2013</span>
+            </div>
+            <div class="description">
+                {{description}}
+            </div>
+        </div>
+        <div class="extra content">
+            <a>
+                <i class="user icon"></i>
+                {{capacity}} Places
+                <a href="deleteclass/{{classId}}" class="ui right floated red icon button">
+                    <i class="trash icon"></i>
+                </a>
+            </a>
+        </div>
+    </div>
+    {{/each}}
+    </div>
 
-    <form class="ui segment form" action="/classes/addclass/{{trainerId}}" method="POST">
+    <form class="ui segment form" action="/addclass/{{trainer.id}}" method="POST">
         <h3 class="ui header">Add Class</h3>
         <div class="two fields">
             <div class="field">

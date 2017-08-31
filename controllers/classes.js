@@ -13,6 +13,7 @@ const classes = {
     const classes = classStore.getTrainersClasses(loggedintrainer.id);
     const viewData = {
       title: 'Classes',
+      trainer: loggedintrainer,
       classes: classes,
     };
     response.render('classes', viewData);
