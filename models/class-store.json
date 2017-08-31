@@ -1,0 +1,20 @@
+{
+  "trainersClasses": [
+    {
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "classes": [
+        {
+          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92b",
+          "name": "Strength and Conditioning",
+          "capacity": 5,
+          "sessions": [
+            {
+              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
+              "enrolledMembers": []
+            }
+          ]
+        }
+        ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{{> trainermenu id="classes"}}
+
+<div class="ui raised segment">
+
+    <form class="ui segment form" action="/classes/addclass/{{trainerId}}" method="POST">
+        <h3 class="ui header">Add Class</h3>
+        <div class="two fields">
+            <div class="field">
+                <label>Class Name</label>
+                <input placeholder="Class Name" type="text" name="name" required>
+            </div>
+        </div>
+        <button class="ui blue submit button">Add Class</button>
+    </form>
+</div>

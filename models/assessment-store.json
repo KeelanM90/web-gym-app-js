@@ -4,6 +4,16 @@
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
+          "assessmentId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92a",
+          "date": "Wed, 30 Aug 2017 16:48:54 GMT",
+          "weight": "68",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1"
+        },
+        {
           "assessmentId": "53a149ba-6d0c-4300-9d46-d835177a36d2",
           "date": "Wed, 17 May 2017 16:00:00 GMT",
           "weight": 134,
@@ -26,22 +36,25 @@
           "hips": 42,
           "comment": "Good job Homer!",
           "trend": "red"
-        },
-        {
-          "assessmentId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92a",
-          "date": "Wed, 30 Aug 2017 16:48:54 GMT",
-          "weight": "68",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1"
         }
       ]
     },
     {
       "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "assessments": []
+      "assessments": [
+        {
+          "assessmentId": "0dfa5501-f460-4495-a509-6115be3c9d3d",
+          "date": "Thu, 31 Aug 2017 12:11:22 GMT",
+          "weight": "65",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1",
+          "trend": "red",
+          "comment": "Tut tut"
+        }
+      ]
     }
   ]
 }

@@ -12,5 +12,21 @@
     <section class="ui container">
       {{{body}}}
     </section>
+    <script>
+        $('.dropdown').dropdown();
+        $('.ui.form')
+                .form({
+                    fields: {
+                        name     : 'empty',
+                        gender   : 'empty',
+                        email    : 'empty',
+                        password : 'empty',
+                        address  : 'empty',
+                        weight   : 'empty',
+                        height   : 'empty',
+                    }
+                })
+        ;
+    </script>
   </body>
 </html>

@@ -52,11 +52,13 @@ const userStore = {
   },
 
   addPicture(member, imageFile, response) {
-    const id = path.parse(member.img);
-    cloudinary.api.delete_resources([id.name], function (result) {
-      console.log(result);
+    if (member.img != null) {
+      const id = path.parse(member.img);
+      cloudinary.api.delete_resources([id.name], function (result) {
+        console.log(result);
+      }
+      );
     }
-    );
     imageFile.mv('tempimage', err => {
       if (!err) {
         cloudinary.uploader.upload('tempimage', result => {
