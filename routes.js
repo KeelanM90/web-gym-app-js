@@ -31,5 +31,6 @@ router.get('/viewmember/:id', trainerdashboard.viewMember);
 router.post('/dashboard/:id/addAssessment', dashboard.addAssessment);
 router.post('/updateComment/:id/:assessmentId', trainerdashboard.updateComment);
 router.get('/dashboard/:memberid/deleteassessment/:assessmentid', dashboard.deleteAssessment);
+router.get('/classes/:trainerid/deleteclass/:classid', classes.deleteClass);
 
 module.exports = router;

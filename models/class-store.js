@@ -14,6 +14,12 @@ const classStore = {
     const classes = this.store.findOneBy(this.collection, { trainerId: trainerId }).classes;
     return classes;
   },
+
+  removeClass(trainerId, classId) {
+    const classes = this.getTrainersClasses(trainerId);
+    _.remove(classes, { classId: classId });
+    this.store.save();
+  },
 };
 
 module.exports = classStore;

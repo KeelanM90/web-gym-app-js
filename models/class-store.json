@@ -16,31 +16,7 @@
           ]
         },
         {
-          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf911",
-          "name": "Strength and Conditioning",
-          "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
-          "capacity": 5,
-          "sessions": [
-            {
-              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
-              "enrolledMembers": []
-            }
-          ]
-        },
-        {
           "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf922",
-          "name": "Strength and Conditioning",
-          "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
-          "capacity": 5,
-          "sessions": [
-            {
-              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
-              "enrolledMembers": []
-            }
-          ]
-        },
-        {
-          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf923",
           "name": "Strength and Conditioning",
           "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
           "capacity": 5,
@@ -63,7 +39,7 @@
             }
           ]
         }
-        ]
+      ]
     }
   ]
 }
