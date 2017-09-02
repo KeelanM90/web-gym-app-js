@@ -1,0 +1,22 @@
+<!-- Custom file input -->
+<!-- Source: http://jsfiddle.net/Dr_Dev/2nu1ngk5/ -->
+<label>Picture</label>
+<div onclick="divclicked()" class="ui action input">
+    <input type="text" placeholder="Choose image" readonly>
+    <input id="file" type="file" name="picture" hidden/>
+    <div class="ui icon button">
+        <i class="image icon"></i>
+    </div>
+</div>
+<script>
+
+    function divclicked() {
+        document.getElementById("file").click();
+    }
+
+    $('input:file', '.ui.action.input')
+            .on('change', function(e) {
+                var name = e.target.files[0].name;
+                $('input:text', $(e.target).parent()).val(name);
+            });
+</script>

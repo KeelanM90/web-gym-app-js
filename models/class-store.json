@@ -16,18 +16,6 @@
           ]
         },
         {
-          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf922",
-          "name": "Strength and Conditioning",
-          "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
-          "capacity": 5,
-          "sessions": [
-            {
-              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
-              "enrolledMembers": []
-            }
-          ]
-        },
-        {
           "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92b",
           "name": "Strength and Conditioning",
           "description": "The role of strength and conditioning is to use exercise prescription.",
@@ -40,8 +28,12 @@
           ]
         },
         {
-          "assessmentId": "f59f3f73-d672-4df7-a267-052c4c468159",
-          "name": "Test"
+          "classId": "a7fad982-350e-4873-affe-f2ef5d0bce08",
+          "name": "Boxercise",
+          "difficulty": "Intermediate",
+          "capacity": "13",
+          "description": "Boxercise is an exercise class based on the training concepts boxers use to keep fit. Classes can take a variety of formats but a typical one may involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups. Most boxercise classes are aimed at men and women o",
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504365072/w9jvmr8g36qsk3fpb3d3.jpg"
         }
       ]
     }

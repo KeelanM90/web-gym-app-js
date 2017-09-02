@@ -2,48 +2,134 @@
 
 <div class="ui raised segment">
     <div class="ui centered three stackable cards">
-    {{#each classes}}
-    <div class="ui card">
-        <div class="image">
-            {{#if img}}
-                <img src="{{img}}">
-            {{else}}
-                <img src="https://semantic-ui.com/images/wireframe/image.png">
-            {{/if}}
-        </div>
-        <div class="content">
-            <a class="header">{{name}}</a>
-            <div class="meta">
-                <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
+        {{#each classes}}
+            <div class="ui card">
+                <div class="image">
+                    {{#if img}}
+                        <img class="ui square image" src="{{img}}">
+                    {{else}}
+                        <img src="https://semantic-ui.com/images/wireframe/image.png">
+                    {{/if}}
+                </div>
+                <div class="content">
+                    <a class="header">{{name}}</a>
+                    <div class="meta">
+                        <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
+                    </div>
+                    <div class="description">
+                        {{description}}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                        <i class="user icon"></i>
+                        {{capacity}} Places
+                        <a href="classes/{{../trainer.id}}/deleteclass/{{classId}}" class="ui right floated red icon button">
+                            <i class="trash icon"></i>
+                        </a>
+                        <a href="editclass/{{classId}}" class="ui right floated blue icon button">
+                            <i class="pencil icon"></i>
+                        </a>
+                    </a>
+                </div>
             </div>
-            <div class="description">
-                {{description}}
-            </div>
-        </div>
-        <div class="extra content">
-            <a>
-                <i class="user icon"></i>
-                {{capacity}} Places
-                <a href="classes/{{../trainer.id}}/deleteclass/{{classId}}" class="ui right floated red icon button">
-                    <i class="trash icon"></i>
-                </a>
-                <a href="editclass/{{classId}}" class="ui right floated blue icon button">
-                    <i class="pencil icon"></i>
-                </a>
-            </a>
-        </div>
-    </div>
-    {{/each}}
+        {{/each}}
     </div>
 
-    <form class="ui segment form" action="classes/{{trainer.id}}/addclass" method="POST">
-        <h3 class="ui header">Add Class</h3>
-        <div class="two fields">
-            <div class="field">
-                <label>Class Name</label>
-                <input placeholder="Class Name" type="text" name="name" required>
+    <form class="ui segment form" action="classes/{{trainer.id}}/addclass" method="POST"  enctype="multipart/form-data">
+        <h2 class="ui header">
+            <i class="add to calendar icon"></i>
+            <div class="content">
+                Add Class
+            </div>
+        </h2>
+        <div class="ui grid">
+            <div class="six wide column">
+                <div class="field">
+                    <label>Class Name</label>
+                    <input placeholder="Class Name" type="text" name="name" required>
+                </div>
+                <div class="field">
+                    <label> Description </label>
+                    <textarea class="ui fluid" placeholder="Description" rows="5" maxlength="300" name="description" required></textarea>
+                </div>
+            </div>
+            <div class="ten wide column">
+                <div class="fields">
+                    <div class="three wide field">
+                        <label>Capacity</label>
+                        <input placeholder="Capacity" type="number" min="1" step="1" name="capacity" required>
+                    </div>
+                    <div class="six wide field">
+                        <label> Difficulty </label>
+                        <select class="ui fluid dropdown" name="difficulty" required>
+                            <option value="" hidden> Difficulty Level </option>
+                            <option value="Beginner"> Beginner </option>
+                            <option value="Intermediate"> Intermediate </option>
+                            <option value="Advanced"> Advanced </option>
+                        </select>
+                    </div>
+                    <div class="seven wide field">
+                        {{> imageupload}}
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="six wide field">
+                        <label> Week of First Class  </label>
+                        <select class="ui fluid dropdown" name="startingweek" required>
+                            <option value="" hidden> Starting Week </option>
+                            {{#each weeks}}
+                                <option value="{{date}}"> Starting {{date}} </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="four wide field">
+                        <label> Class Duration </label>
+                        <select class="ui fluid dropdown" name="duration" required>
+                            <option value="" hidden> Duration </option>
+                            <option value="1"> 1 Week </option>
+                            <option value="2"> 2 Weeks </option>
+                            <option value="3"> 3 Weeks </option>
+                            <option value="4"> 4 Weeks </option>
+                            <option value="5"> 5 Weeks </option>
+                            <option value="6"> 6 Weeks </option>
+                            <option value="7"> 7 Weeks </option>
+                            <option value="8"> 8 Weeks </option>
+                            <option value="9"> 9 Weeks </option>
+                            <option value="10"> 10 Weeks </option>
+                            <option value="11"> 11 Weeks </option>
+                            <option value="12"> 12 Weeks </option>
+                        </select>
+                    </div>
+                    <div class="three wide field">
+                        <label> Start Time </label>
+                        <input type="time" name="starttime">
+                    </div>
+                    <div class="three wide field">
+                        <label>End Time</label>
+                        <input type="time" name="starttime">
+                    </div>
+                </div>
+                <div class="field">
+                    <label> Days </label>
+                    <select name="days" multiple="" class="ui fluid dropdown" required>
+                        <option value=""> Days </option>
+                        <option value="0"> Monday </option>
+                        <option value="1"> Tuesday </option>
+                        <option value="2"> Wednesday </option>
+                        <option value="3"> Thursday </option>
+                        <option value="4"> Friday </option>
+                        <option value="5"> Saturday </option>
+                        <option value="6"> Sunday </option>
+                    </select>
+                </div>
             </div>
         </div>
-        <button class="ui blue submit button">Add Class</button>
+        <div class="fields">
+            <label> &nbsp; </label>
+            <button class="ui right floated blue submit button">Add Class</button>
+        </div>
+
     </form>
+
 </div>
