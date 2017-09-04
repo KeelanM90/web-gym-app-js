@@ -16,7 +16,7 @@ const classes = {
     for (let i = 0; i < 12; i++)
     {
       weekStartingDates[i]  = {
-        date: dateformat(date, 'dd/mm/yyyy'),
+        date: dateformat(date, 'yyyy-mm-dd'),
         readableDate: dateformat(date, 'dddd, dd/mm'),
       };
       date.setDate(date.getDate() + 7);
@@ -36,7 +36,9 @@ const classes = {
   addClass(request, response) {
     const trainerId = request.params.trainerid;
 
-    const duration = request.body.duration;
+    const term = request.body.term;
+    const days = request.body.days.toString().split(',');
+    const startingDate = request.body.startingweek;
 
     const newClass = {
       classId: uuid(),
@@ -44,7 +46,22 @@ const classes = {
       difficulty: request.body.difficulty,
       capacity: request.body.capacity,
       description: request.body.description,
+      sessions: [],
     };
+    for (let i = 0; i < term; i++) {
+      for (let j in days) {
+        let tempDate = new Date(startingDate);
+        const dateChange = (i * 7) + Number(days[j]);
+        newClass.sessions.push({
+              sessionId: uuid(),
+              date: dateformat(tempDate.setDate(tempDate.getDate() + dateChange), 'ddd, dd mmm yyyy'),
+              starttime: request.body.starttime,
+              endtime: request.body.endtime,
+              enrollments: [],
+            }
+        );
+      }
+    }
 
     classStore.addClass(trainerId, newClass);
 
