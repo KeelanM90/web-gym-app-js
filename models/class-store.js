@@ -46,7 +46,6 @@ const classStore = {
     const trainersClasses = this.getTrainersClasses(trainerId);
     const thisClass = _.find(trainersClasses, { classId: classId });
     const session = _.find(thisClass.sessions, { sessionId: sessionId });
-    logger.info(_.find(session.enrollments, { memberId: enrollment.memberId }));
 
     if (_.find(session.enrollments, { memberId: enrollment.memberId }) == null) {
       if (thisClass.capacity > session.enrollments.length) {
@@ -56,15 +55,25 @@ const classStore = {
     }
   },
 
-  unenroll(trainerId, classId, sessionId, enrollment) {
+  unenroll(trainerId, classId, sessionId, memberId) {
     const trainersClasses = this.getTrainersClasses(trainerId);
     const thisClass = _.find(trainersClasses, { classId: classId });
     const session = _.find(thisClass.sessions, { sessionId: sessionId });
-    logger.info('capacity: ' + thisClass.capacity + ', enrollments: ' + session.enrollments.length);
 
-    if (thisClass.capacity > session.enrollments.length) {
-      session.enrollments.push(enrollment);
-      this.store.save();
+    _.remove(session.enrollments, { memberId: memberId });
+    this.store.save();
+  },
+
+  enrollAll(trainerId, classId, memberId) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    const allSessions = thisClass.sessions;
+    const enrollment = {
+      memberId: memberId,
+    };
+    for (let i = 0; i < allSessions.length; i++) {
+      this.enroll(trainerId, classId, allSessions[i].sessionId, enrollment);
+      logger.debug(trainerId, classId, allSessions[i].sessionId, enrollment);
     }
   },
 

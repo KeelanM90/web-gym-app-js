@@ -18,4 +18,8 @@ handlebars.registerHelper('isEnrolled', function (enrollments, memberId) {
   return false;
 });
 
+handlebars.registerHelper('subtract', function (firstNumber, secondNumber) {
+  return firstNumber - secondNumber;
+});
+
 module.exports = handlebars;

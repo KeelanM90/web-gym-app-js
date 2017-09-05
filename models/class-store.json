@@ -17,8 +17,7 @@
               "endtime": "12:15",
               "enrollments": [
                 {
-                  "enrollmentId": "85ea8f15-4060-45ee-a274-12908c089821",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c1"
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             },
@@ -29,8 +28,7 @@
               "endtime": "12:15",
               "enrollments": [
                 {
-                  "enrollmentId": "225d668c-9d25-40c7-83a2-e82c670a8ea3",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                  "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
                 }
               ]
             },
@@ -41,7 +39,6 @@
               "endtime": "12:15",
               "enrollments": [
                 {
-                  "enrollmentId": "f961a61a-d1a3-4414-b39a-271c6cf233b0",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -63,15 +60,12 @@
               "endtime": "14:15",
               "enrollments": [
                 {
-                  "enrollmentId": "124dfa19-95a0-4a0b-8b53-5a10ae8335f1",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86l0"
                 },
                 {
-                  "enrollmentId": "a11558a5-db0e-4ff1-9427-01677d602f7b",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a8lc0"
                 },
                 {
-                  "enrollmentId": "b7ff4f28-ca78-4219-8c0b-0769d3ce5a3c",
                   "memberId": "3ad52697-6d98-4d80-8273-08cde55a86c0"
                 }
               ]
@@ -81,14 +75,25 @@
               "date": "Tue, 03 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+                },
+                {
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
               "sessionId": "80123e61-d4e4-4af3-8a67-ef3a120f2a3f",
               "date": "Tue, 10 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
               "sessionId": "afa93c66-3213-4d67-92c2-ebf8004cc5c2",
@@ -97,15 +102,6 @@
               "endtime": "14:15",
               "enrollments": [
                 {
-                  "enrollmentId": "15550744-b480-4d87-96e5-d1c219e28945",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "3e4a74b4-ad1a-4b90-a291-96d4e6fcd680",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "c2dcd879-28be-4c1d-9aaa-0d4ace62c0bf",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -117,15 +113,6 @@
               "endtime": "14:15",
               "enrollments": [
                 {
-                  "enrollmentId": "dce61051-ec6d-4791-bc23-12d9a69bff57",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "8d8e0c7f-cf1e-4984-9567-ed4c4c42ae55",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "a91a8649-5bfd-4239-b157-1cf60b3c76a2",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -137,15 +124,9 @@
               "endtime": "14:15",
               "enrollments": [
                 {
-                  "enrollmentId": "d61b992c-dfe7-40df-b1d1-469075b5b262",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a85c0"
                 },
                 {
-                  "enrollmentId": "d40a3236-2ad3-43f7-b287-b6f08d4cb110",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "474231d1-49ca-49bc-95b0-1ec0af00031c",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -167,23 +148,6 @@
               "endtime": "12:00",
               "enrollments": [
                 {
-                  "enrollmentId": "dce0339b-d848-4ef4-a4ed-e2d234c94112",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "86acbd7c-aa41-4c36-964d-5a4655787a80",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "fe474673-5682-41af-b195-37e034c81a36",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "c2444f29-61a6-4a60-86d4-ac8db6edd88e",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "b3b6ab83-a1fa-4fdf-ac25-603a49879828",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -195,23 +159,6 @@
               "endtime": "12:00",
               "enrollments": [
                 {
-                  "enrollmentId": "494fe0fe-e9c2-4c7d-9172-81e153688288",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "60ddd0f9-79b3-46b0-932a-ce825a2457b9",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "0dd18ca4-372a-41b0-b7ef-51f83fcab389",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "a68dfc03-b10d-4917-938e-417bfb4be81a",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "7098d240-8eef-4698-9e6c-83231747afb3",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -236,16 +183,7 @@
               "date": "Tue, 12 Sep 2017",
               "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": [
-                {
-                  "enrollmentId": "4c144533-c106-4f39-8db4-90061d171ed4",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "6853338b-6a48-41a4-a650-0881858667a6",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "947916c1-1321-48aa-a9b1-25f54cc0fec5",
@@ -254,11 +192,9 @@
               "endtime": "12:00",
               "enrollments": [
                 {
-                  "enrollmentId": "8796589f-eec4-4db2-aca0-1e2acd135a0c",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a46c0"
                 },
                 {
-                  "enrollmentId": "721c4c25-f2bf-42ca-b3ae-84b287a883f2",
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
@@ -268,32 +204,14 @@
               "date": "Tue, 19 Sep 2017",
               "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": [
-                {
-                  "enrollmentId": "b42365fe-1b1d-43b4-ac39-9f845ca30bee",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "9219d9e1-3ab1-46ce-b9fa-ea125dbe33a8",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "79c3db2a-f987-428f-ac2e-588cb882c6a6",
               "date": "Thu, 21 Sep 2017",
               "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": [
-                {
-                  "enrollmentId": "886aec6c-db3c-464a-9963-236fa3a7a0f4",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                },
-                {
-                  "enrollmentId": "732fd9de-c121-48e8-a952-b74070542c45",
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             }
           ],
           "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554578/ksw0i5b6zdohgsqntdzo.jpg"

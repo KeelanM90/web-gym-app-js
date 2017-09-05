@@ -1,59 +1,71 @@
 {{> menu id="classes"}}
-<div class="ui raised segment">
-    <div class="ui divided stacking items">
-        {{#each trainersClasses}}
-            {{#each classes}}
-                <div class="item">
-                    <div class="ui image">
-                        {{#if img}}
-                            <img style="width: 230px; object-fit: cover" src="{{img}}">
-                        {{else}}
-                            <img style="width: 230px; object-fit: cover" src="https://semantic-ui.com/images/wireframe/image.png">
-                        {{/if}}
-                    </div>
-
-                    <div class="content">
-                        <div class="ui two column divided stackable grid">
-                            <div class="eleven wide column">
-                                <a class="header">{{name}}</a>
-                                <div class="meta">
-                                    <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
-                                </div>
-                                <div class="description">
-                                    {{description}}
-                                </div>
-                            </div>
-                            <div class="five wide column">
-                                <div class="list">
-                                    {{#each sessions}}
-                                        <div class="content">
-                                            <div class="header">
-                                                {{date}}
-                                                <a href="enroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}"
-                                                   id="session{{sessionId}}" class="ui right floated blue icon tiny button">
-                                                    <i class="ui add icon"></i>
-                                                    Enroll </a>
-                                                <script>
-
-                                                    if ({{isEnrolled this.enrollments ../../../member.id}}) {
-                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated red tiny button';
-                                                        document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui minus icon"></i>Unenroll';
-                                                        document.getElementById('session{{sessionId}}').setAttribute('href', 'unroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}');
-                                                    } else if ({{../capacity}} - {{enrollments.length}} === 0) {
-                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated disabled red tiny button';
-                                                        document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui delete icon"></i>Full';
-                                                    }
-                                                </script>
-                                            </div>
-                                            {{starttime}} - {{endtime}}
-                                        </div>
-                                    {{/each}}
-                                </div>
-                            </div>
+{{#each trainersClasses}}
+    {{#each classes}}
+        <div class="ui raised segment">
+            <div class="ui divided stackable grid">
+                <div class="row">
+                    <div class="ui four wide column">
+                        <div class="ui image">
+                            {{#if img}}
+                                <img style="width: 320px; object-fit: cover" src="{{img}}">
+                            {{else}}
+                                <img style="width: 320px; object-fit: cover"
+                                     src="https://semantic-ui.com/images/wireframe/image.png">
+                            {{/if}}
                         </div>
                     </div>
+                    <div class="ui seven wide column">
+                        <h2>{{name}}</h2>
+                        {{description}}
+                    </div>
+                    <div class="ui five wide column">
+                        <h2>Information</h2>
+                        <div><i class="large bar chart icon"></i> Difficulty: {{difficulty}}</div>
+                        <div><i class="large user icon"></i> Class Size: {{capacity}} Members</div>
+                        <div><i class="large calendar icon"></i> Sessions: {{sessions.length}}</div>
+                    </div>
                 </div>
-            {{/each}}
-        {{/each}}
-    </div>
-</div>
+            </div>
+            <table class="ui padded table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Availability</th>
+                    <th class="collapsing">
+                        <a href="enrollall/{{../trainerId}}/{{classId}}" id="class{{classId}}"
+                           class="ui fluid blue icon tiny button"> Enroll All </a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each sessions}}
+                    <tr>
+                        <td class="collapsing">
+                            {{date}}
+                        </td>
+                        <td> {{starttime}} - {{endtime}} </td>
+                        <td> {{subtract ../capacity enrollments.length}} Places Remaining </td>
+                        <td class="two wide collapsing">
+                            <a href="enroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}"
+                               id="session{{sessionId}}" class="ui fluid blue icon mini button">
+                                <i class="ui add icon"></i>
+                                Enroll </a>
+                        </td>
+                        <script>
+                            if ({{isEnrolled this.enrollments ../../../member.id}}) {
+                                document.getElementById('session{{sessionId}}').className = 'ui fluid red mini button';
+                                document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui minus icon"></i>Unenroll';
+                                document.getElementById('session{{sessionId}}').setAttribute('href', 'unenroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}');
+                            } else if ({{../capacity}} - {{enrollments.length}} === 0) {
+                                document.getElementById('session{{sessionId}}').className = 'ui fluid disabled red mini button';
+                                document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui delete icon"></i>Full';
+                            }
+                        </script>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{/each}}
+{{/each}}

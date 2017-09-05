@@ -103,11 +103,27 @@ const classes = {
     const sessionId = request.params.sessionid;
 
     const enrollment = {
-      enrollmentId: uuid(),
       memberId: accounts.getCurrentMember(request).id,
     };
 
     classStore.enroll(trainerId, classId, sessionId, enrollment);
+    response.redirect('/viewclasses');
+  },
+
+  unenrollFromSession(request, response) {
+    const trainerId = request.params.trainerid;
+    const classId = request.params.classid;
+    const sessionId = request.params.sessionid;
+
+    classStore.unenroll(trainerId, classId, sessionId, accounts.getCurrentMember(request).id);
+    response.redirect('/viewclasses');
+  },
+
+  enrollAll(request, response) {
+    const trainerId = request.params.trainerid;
+    const classId = request.params.classid;
+
+    classStore.enrollAll(trainerId, classId, accounts.getCurrentMember(request).id);
     response.redirect('/viewclasses');
   },
 };
