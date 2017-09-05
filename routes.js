@@ -26,6 +26,7 @@ router.get('/viewclasses', classes.viewClasses);
 router.get('/enroll/:trainerid/:classid/:sessionid', classes.enrollInSession);
 router.get('/unenroll/:trainerid/:classid/:sessionid', classes.unenrollFromSession);
 router.get('/enrollall/:trainerid/:classid', classes.enrollAll);
+router.get('/unenrollall/:trainerid/:classid', classes.unenrollAll);
 router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);

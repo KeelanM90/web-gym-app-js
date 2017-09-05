@@ -73,7 +73,15 @@ const classStore = {
     };
     for (let i = 0; i < allSessions.length; i++) {
       this.enroll(trainerId, classId, allSessions[i].sessionId, enrollment);
-      logger.debug(trainerId, classId, allSessions[i].sessionId, enrollment);
+    }
+  },
+
+  unenrollAll(trainerId, classId, memberId) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    const allSessions = thisClass.sessions;
+    for (let i = 0; i < allSessions.length; i++) {
+      this.unenroll(trainerId, classId, allSessions[i].sessionId, memberId);
     }
   },
 

@@ -33,8 +33,7 @@
                     <th>Time</th>
                     <th>Availability</th>
                     <th class="collapsing">
-                        <a href="enrollall/{{../trainerId}}/{{classId}}" id="class{{classId}}"
-                           class="ui fluid blue icon tiny button"> Enroll All </a>
+                        {{getClassButton ../trainerId this ../../member.id}}
                     </th>
                 </tr>
                 </thead>
@@ -45,23 +44,10 @@
                             {{date}}
                         </td>
                         <td> {{starttime}} - {{endtime}} </td>
-                        <td> {{subtract ../capacity enrollments.length}} Places Remaining </td>
+                        <td> {{subtract ../capacity enrollments.length}} Places Remaining</td>
                         <td class="two wide collapsing">
-                            <a href="enroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}"
-                               id="session{{sessionId}}" class="ui fluid blue icon mini button">
-                                <i class="ui add icon"></i>
-                                Enroll </a>
+                            {{getSessionButton ../../trainerId ../this this ../../../member.id}}
                         </td>
-                        <script>
-                            if ({{isEnrolled this.enrollments ../../../member.id}}) {
-                                document.getElementById('session{{sessionId}}').className = 'ui fluid red mini button';
-                                document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui minus icon"></i>Unenroll';
-                                document.getElementById('session{{sessionId}}').setAttribute('href', 'unenroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}');
-                            } else if ({{../capacity}} - {{enrollments.length}} === 0) {
-                                document.getElementById('session{{sessionId}}').className = 'ui fluid disabled red mini button';
-                                document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui delete icon"></i>Full';
-                            }
-                        </script>
                     </tr>
                 {{/each}}
                 </tbody>

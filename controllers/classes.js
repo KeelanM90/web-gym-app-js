@@ -126,6 +126,14 @@ const classes = {
     classStore.enrollAll(trainerId, classId, accounts.getCurrentMember(request).id);
     response.redirect('/viewclasses');
   },
+
+  unenrollAll(request, response) {
+    const trainerId = request.params.trainerid;
+    const classId = request.params.classid;
+
+    classStore.unenrollAll(trainerId, classId, accounts.getCurrentMember(request).id);
+    response.redirect('/viewclasses');
+  },
 };
 
 module.exports = classes;

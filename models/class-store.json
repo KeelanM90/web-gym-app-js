@@ -89,11 +89,7 @@
               "date": "Tue, 10 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "afa93c66-3213-4d67-92c2-ebf8004cc5c2",
@@ -138,7 +134,7 @@
           "classId": "b2b6fd25-3b66-440c-a19c-b41fa627168c",
           "name": "Yoga",
           "difficulty": "Beginner",
-          "capacity": "5",
+          "capacity": "1",
           "description": "Yoga is designed to improve the health, performance, and mental acuity of athletes or individuals interested in improving their level of fitness. Based on the ancient fitness science of hatha yoga, it blends balance, strength, flexibility and power in a fitness format.",
           "sessions": [
             {
@@ -148,7 +144,7 @@
               "endtime": "12:00",
               "enrollments": [
                 {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                  "memberId": "3ad52698-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             },
@@ -159,7 +155,7 @@
               "endtime": "12:00",
               "enrollments": [
                 {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                  "memberId": "3ad52698-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             }
@@ -193,9 +189,6 @@
               "enrollments": [
                 {
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a46c0"
-                },
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             },
