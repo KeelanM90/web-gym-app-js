@@ -30,12 +30,18 @@
                                             <div class="header">
                                                 {{date}}
                                                 <a href="enroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}"
-                                                   id="session{{sessionId}}" class="ui right floated blue icon button">
+                                                   id="session{{sessionId}}" class="ui right floated blue icon tiny button">
+                                                    <i class="ui add icon"></i>
                                                     Enroll </a>
                                                 <script>
-                                                    if ({{../capacity}} - {{enrollments.length}} === 0) {
-                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated red disabled button';
-                                                        document.getElementById('session{{sessionId}}').innerText = 'Full';
+
+                                                    if ({{isEnrolled this.enrollments ../../../member.id}}) {
+                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated red tiny button';
+                                                        document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui minus icon"></i>Unenroll';
+                                                        document.getElementById('session{{sessionId}}').setAttribute('href', 'unroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}');
+                                                    } else if ({{../capacity}} - {{enrollments.length}} === 0) {
+                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated disabled red tiny button';
+                                                        document.getElementById('session{{sessionId}}').innerHTML = '<i class="ui delete icon"></i>Full';
                                                     }
                                                 </script>
                                             </div>

@@ -35,9 +35,11 @@ const classes = {
 
   viewClasses(request, response) {
     logger.info('classes rendering');
+    const loggedinmember = accounts.getCurrentMember(request);
     const viewData = {
       title: 'Classes',
       trainersClasses: classStore.getAllClasses(),
+      member: loggedinmember,
     };
     response.render('viewclasses', viewData);
   },
