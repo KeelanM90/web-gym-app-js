@@ -1,162 +1,320 @@
 {
   "trainersClasses": [
     {
+      "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
+      "classes": [
+        {
+          "classId": "7bb51d5b-2071-48e7-84c6-d2c3cdb07bcb",
+          "name": "Lugash's Ballet Classes",
+          "difficulty": "Advanced",
+          "capacity": "1",
+          "description": "You should not fear Lugash. You should only fear dying surround by only family and loved ones and no medals to prove you are not worthless. But for now…YOU ARE ALL WORTHLESS! …..I am sorry, children. Lugash must go to anger management class. WORTHLESS ANGER MANAGEMENT CLASS! I HATE IT SO MUCH!",
+          "sessions": [
+            {
+              "sessionId": "a15a201c-63a6-4d0f-98da-cf68fdc8cb2d",
+              "date": "Fri, 22 Sep 2017",
+              "starttime": "10:00",
+              "endtime": "12:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "85ea8f15-4060-45ee-a274-12908c089821",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "60880fa8-89a7-44d0-a27f-bd4da57734d4",
+              "date": "Fri, 29 Sep 2017",
+              "starttime": "10:00",
+              "endtime": "12:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "225d668c-9d25-40c7-83a2-e82c670a8ea3",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "01a02f5c-1e57-4f44-b939-200659df3052",
+              "date": "Fri, 06 Oct 2017",
+              "starttime": "10:00",
+              "endtime": "12:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "f961a61a-d1a3-4414-b39a-271c6cf233b0",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            }
+          ],
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554701/mjlsbk8iwhlbctnp9zwo.jpg"
+        },
+        {
+          "classId": "fbd138ca-270b-43a3-94eb-6511b70f5106",
+          "name": "Strength and Conditioning",
+          "difficulty": "Beginner",
+          "capacity": "3",
+          "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
+          "sessions": [
+            {
+              "sessionId": "90a22115-00d8-4ef9-94ef-dd31fee5b74f",
+              "date": "Tue, 26 Sep 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "124dfa19-95a0-4a0b-8b53-5a10ae8335f1",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "a11558a5-db0e-4ff1-9427-01677d602f7b",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "3f2b6d33-88eb-4904-9ad6-af08c847edff",
+              "date": "Tue, 03 Oct 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "1a8ca67b-e9cb-43d3-b033-43eb2515fe1c",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c2"
+                },
+                {
+                  "enrollmentId": "667386c5-2593-4a45-9409-b3a71a379eba",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "80123e61-d4e4-4af3-8a67-ef3a120f2a3f",
+              "date": "Tue, 10 Oct 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "fa631587-d822-4576-81e3-60896c8ff7b3",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "6087c5c4-94fc-4722-a635-540bb7c51b86",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "4dae1529-0cb2-4c4d-ab2e-cdcc7447d027",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "afa93c66-3213-4d67-92c2-ebf8004cc5c2",
+              "date": "Tue, 17 Oct 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "15550744-b480-4d87-96e5-d1c219e28945",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "3e4a74b4-ad1a-4b90-a291-96d4e6fcd680",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "c2dcd879-28be-4c1d-9aaa-0d4ace62c0bf",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "f3dd1e9a-8885-44a4-8e05-3952cdb15dac",
+              "date": "Tue, 24 Oct 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "dce61051-ec6d-4791-bc23-12d9a69bff57",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "8d8e0c7f-cf1e-4984-9567-ed4c4c42ae55",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "a91a8649-5bfd-4239-b157-1cf60b3c76a2",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "968cdcd4-4410-4368-9377-24acfb9b8c89",
+              "date": "Tue, 31 Oct 2017",
+              "starttime": "13:45",
+              "endtime": "14:15",
+              "enrollments": [
+                {
+                  "enrollmentId": "d61b992c-dfe7-40df-b1d1-469075b5b262",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "d40a3236-2ad3-43f7-b287-b6f08d4cb110",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "474231d1-49ca-49bc-95b0-1ec0af00031c",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            }
+          ],
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554944/z9ugyhzlccftwdui9jfi.jpg"
+        },
+        {
+          "classId": "b2b6fd25-3b66-440c-a19c-b41fa627168c",
+          "name": "Yoga",
+          "difficulty": "Beginner",
+          "capacity": "5",
+          "description": "Yoga is designed to improve the health, performance, and mental acuity of athletes or individuals interested in improving their level of fitness. Based on the ancient fitness science of hatha yoga, it blends balance, strength, flexibility and power in a fitness format.",
+          "sessions": [
+            {
+              "sessionId": "a145c9e3-fe1d-4078-93f5-f000b18fff48",
+              "date": "Tue, 19 Sep 2017",
+              "starttime": "11:00",
+              "endtime": "12:00",
+              "enrollments": [
+                {
+                  "enrollmentId": "dce0339b-d848-4ef4-a4ed-e2d234c94112",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "86acbd7c-aa41-4c36-964d-5a4655787a80",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "fe474673-5682-41af-b195-37e034c81a36",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "c2444f29-61a6-4a60-86d4-ac8db6edd88e",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "b3b6ab83-a1fa-4fdf-ac25-603a49879828",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            },
+            {
+              "sessionId": "3509a1b4-39ba-47e9-baf8-cd3f81cc169f",
+              "date": "Tue, 26 Sep 2017",
+              "starttime": "11:00",
+              "endtime": "12:00",
+              "enrollments": [
+                {
+                  "enrollmentId": "494fe0fe-e9c2-4c7d-9172-81e153688288",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "60ddd0f9-79b3-46b0-932a-ce825a2457b9",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "0dd18ca4-372a-41b0-b7ef-51f83fcab389",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "a68dfc03-b10d-4917-938e-417bfb4be81a",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "7098d240-8eef-4698-9e6c-83231747afb3",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
+            }
+          ],
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504555672/llyad3ffjukiu9niisaz.jpg"
+        }
+      ]
+    },
+    {
       "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
       "classes": [
         {
-          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92b",
-          "name": "Strength and Conditioning",
-          "description": "The role of strength and conditioning is to use exercise prescription specifically to improve performance in athletic competition. They also help athletes with injury prevention and proper mechanics within their sports performances.",
-          "capacity": 5,
-          "sessions": [
-            {
-              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
-              "enrolledMembers": []
-            }
-          ]
-        },
-        {
-          "classId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92b",
-          "name": "Strength and Conditioning",
-          "description": "The role of strength and conditioning is to use exercise prescription.",
-          "capacity": 5,
-          "sessions": [
-            {
-              "sessionId": "3a44b6a6-c5f0-4f6d-992f-21e622dcf92c",
-              "enrolledMembers": []
-            }
-          ]
-        },
-        {
-          "classId": "a7fad982-350e-4873-affe-f2ef5d0bce08",
+          "classId": "97b43f1f-5f9c-4dde-afd4-66d41b21d5e1",
           "name": "Boxercise",
           "difficulty": "Intermediate",
-          "capacity": "13",
-          "description": "Boxercise is an exercise class based on the training concepts boxers use to keep fit. Classes can take a variety of formats but a typical one may involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups. Most boxercise classes are aimed at men and women o",
-          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504365072/w9jvmr8g36qsk3fpb3d3.jpg"
-        },
-        {
-          "classId": "bae13e18-70ed-4161-817b-6e7ec3a5fec1",
-          "name": "name",
-          "difficulty": "Beginner",
-          "capacity": "0",
-          "description": "description",
+          "capacity": "2",
+          "description": "Boxercise is an exercise class based on the training concepts boxers use to keep fit. Classes can take a variety of formats but a typical one may involve shadow-boxing, skipping, hitting pads, kicking punchbags, press-ups, shuttle-runs and sit-ups.",
           "sessions": [
             {
-              "sessionId": "3f19da99-6eef-464f-8f5f-7de31584c08e",
-              "date": "Mon, 25 Sep 2017",
-              "starttime": "11:10",
+              "sessionId": "f4d683e8-d8ef-484a-91ba-c65fea6f0d93",
+              "date": "Tue, 12 Sep 2017",
+              "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "enrollmentId": "4c144533-c106-4f39-8db4-90061d171ed4",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "6853338b-6a48-41a4-a650-0881858667a6",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
-              "sessionId": "2787ad90-6884-4fb3-9815-387d2c8ca32d",
-              "date": "Tue, 26 Sep 2017",
-              "starttime": "11:10",
+              "sessionId": "947916c1-1321-48aa-a9b1-25f54cc0fec5",
+              "date": "Thu, 14 Sep 2017",
+              "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "enrollmentId": "8796589f-eec4-4db2-aca0-1e2acd135a0c",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "721c4c25-f2bf-42ca-b3ae-84b287a883f2",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
-              "sessionId": "375f6e6d-133a-4ffe-93e7-22eca93fca1c",
-              "date": "Fri, 29 Sep 2017",
-              "starttime": "11:10",
+              "sessionId": "8e9f7c4b-8cd6-4418-a815-a0bdf06caa2e",
+              "date": "Tue, 19 Sep 2017",
+              "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "enrollmentId": "b42365fe-1b1d-43b4-ac39-9f845ca30bee",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "9219d9e1-3ab1-46ce-b9fa-ea125dbe33a8",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
-              "sessionId": "49410959-dd52-4bbc-9c49-af8636ca1c59",
-              "date": "Mon, 02 Oct 2017",
-              "starttime": "11:10",
+              "sessionId": "79c3db2a-f987-428f-ac2e-588cb882c6a6",
+              "date": "Thu, 21 Sep 2017",
+              "starttime": "11:00",
               "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "04c33030-e88d-47d4-bd5e-0682e666e538",
-              "date": "Tue, 03 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "ca1bb754-83b5-46a2-acda-01d623850e76",
-              "date": "Fri, 06 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "3eaeedab-a5f2-4e71-990e-59d01ed963c5",
-              "date": "Mon, 09 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "ed16fc9b-0208-4db6-8f9f-e2d2c45d2789",
-              "date": "Tue, 10 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "7f3b9f77-634a-41b1-8e1b-866ab5e13fd0",
-              "date": "Fri, 13 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "enrollmentId": "886aec6c-db3c-464a-9963-236fa3a7a0f4",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                },
+                {
+                  "enrollmentId": "732fd9de-c121-48e8-a952-b74070542c45",
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             }
-          ]
-        },
-        {
-          "classId": "7026ca23-b385-4514-ae6c-bb2f1fdbd12a",
-          "name": "name",
-          "difficulty": "Beginner",
-          "capacity": "0",
-          "description": "description",
-          "sessions": [
-            {
-              "sessionId": "34a9d415-e8f0-4c8e-b2a8-fd8e52bd5f5e",
-              "date": "Tue, 26 Sep 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "bd71ba38-daaf-4c78-abfd-10ebfe337a6d",
-              "date": "Fri, 29 Sep 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "94baaefb-f291-42d7-b17b-1caa765922c6",
-              "date": "Tue, 03 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "30cfe6c1-b123-46b7-94f6-b4a48d7b0232",
-              "date": "Fri, 06 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "66e6ae3f-e8c1-41f2-8984-cb72674b3403",
-              "date": "Tue, 10 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            },
-            {
-              "sessionId": "5ba906f6-09e6-4aa6-bb51-75f3b5e96e7c",
-              "date": "Fri, 13 Oct 2017",
-              "starttime": "11:10",
-              "endtime": "12:00",
-              "enrollments": []
-            }
-          ]
+          ],
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554578/ksw0i5b6zdohgsqntdzo.jpg"
         }
       ]
     }

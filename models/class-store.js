@@ -20,6 +20,11 @@ const classStore = {
   store: new JsonStore('./models/class-store.json', { trainersClasses: [] }),
   collection: 'trainersClasses',
 
+  getAllClasses() {
+    const classes = this.store.findAll(this.collection);
+    return classes;
+  },
+
   getTrainersClasses(trainerId) {
     const classes = this.store.findOneBy(this.collection, { trainerId: trainerId }).classes;
     return classes;
@@ -37,9 +42,35 @@ const classStore = {
     this.store.save();
   },
 
+  enroll(trainerId, classId, sessionId, enrollment) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    const session = _.find(thisClass.sessions, { sessionId: sessionId });
+    logger.info(_.find(session.enrollments, { memberId: enrollment.memberId }));
+
+    if (_.find(session.enrollments, { memberId: enrollment.memberId }) == null) {
+      if (thisClass.capacity > session.enrollments.length) {
+        session.enrollments.push(enrollment);
+        this.store.save();
+      }
+    }
+  },
+
+  unenroll(trainerId, classId, sessionId, enrollment) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    const session = _.find(thisClass.sessions, { sessionId: sessionId });
+    logger.info('capacity: ' + thisClass.capacity + ', enrollments: ' + session.enrollments.length);
+
+    if (thisClass.capacity > session.enrollments.length) {
+      session.enrollments.push(enrollment);
+      this.store.save();
+    }
+  },
+
   addPicture(classes, imageFile, response) {
     if (classes.img != null) {
-      const id = path.parse(member.img);
+      const id = path.parse(classes.img);
       cloudinary.api.delete_resources([id.name], function (result) {
             console.log(result);
           }

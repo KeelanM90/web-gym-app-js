@@ -33,6 +33,15 @@ const classes = {
     response.render('classes', viewData);
   },
 
+  viewClasses(request, response) {
+    logger.info('classes rendering');
+    const viewData = {
+      title: 'Classes',
+      trainersClasses: classStore.getAllClasses(),
+    };
+    response.render('viewclasses', viewData);
+  },
+
   addClass(request, response) {
     const trainerId = request.params.trainerid;
 
@@ -84,6 +93,20 @@ const classes = {
     classStore.removeClass(trainerId, classId);
 
     response.redirect('/classes');
+  },
+
+  enrollInSession(request, response) {
+    const trainerId = request.params.trainerid;
+    const classId = request.params.classid;
+    const sessionId = request.params.sessionid;
+
+    const enrollment = {
+      enrollmentId: uuid(),
+      memberId: accounts.getCurrentMember(request).id,
+    };
+
+    classStore.enroll(trainerId, classId, sessionId, enrollment);
+    response.redirect('/viewclasses');
   },
 };
 

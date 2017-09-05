@@ -22,7 +22,8 @@ router.get('/deletemember/:id', accounts.deleteMember);
 
 router.get('/dashboard', dashboard.index);
 router.get('/classes', classes.index);
-router.get('/classes', classes.index);
+router.get('/viewclasses', classes.viewClasses);
+router.get('/enroll/:trainerid/:classid/:sessionid', classes.enrollInSession);
 router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);

@@ -1,0 +1,53 @@
+{{> menu id="classes"}}
+<div class="ui raised segment">
+    <div class="ui divided stacking items">
+        {{#each trainersClasses}}
+            {{#each classes}}
+                <div class="item">
+                    <div class="ui image">
+                        {{#if img}}
+                            <img style="width: 230px; object-fit: cover" src="{{img}}">
+                        {{else}}
+                            <img style="width: 230px; object-fit: cover" src="https://semantic-ui.com/images/wireframe/image.png">
+                        {{/if}}
+                    </div>
+
+                    <div class="content">
+                        <div class="ui two column divided stackable grid">
+                            <div class="eleven wide column">
+                                <a class="header">{{name}}</a>
+                                <div class="meta">
+                                    <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
+                                </div>
+                                <div class="description">
+                                    {{description}}
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <div class="list">
+                                    {{#each sessions}}
+                                        <div class="content">
+                                            <div class="header">
+                                                {{date}}
+                                                <a href="enroll/{{../../trainerId}}/{{../classId}}/{{sessionId}}"
+                                                   id="session{{sessionId}}" class="ui right floated blue icon button">
+                                                    Enroll </a>
+                                                <script>
+                                                    if ({{../capacity}} - {{enrollments.length}} === 0) {
+                                                        document.getElementById('session{{sessionId}}').className = 'ui right floated red disabled button';
+                                                        document.getElementById('session{{sessionId}}').innerText = 'Full';
+                                                    }
+                                                </script>
+                                            </div>
+                                            {{starttime}} - {{endtime}}
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        {{/each}}
+    </div>
+</div>
