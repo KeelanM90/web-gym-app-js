@@ -21,7 +21,7 @@ const trainerdashboard = {
       title: 'Gym App Trainer Dashboard',
       trainer: loggedintrainer,
       members: members,
-      bookings: assessmentstore.getTrainersBookings(loggedintrainer.id);
+      bookings: assessmentstore.getTrainersBookings(loggedintrainer.id),
     };
     response.render('trainerdashboard', viewData);
   },

@@ -59,6 +59,13 @@
   ],
   "assessmentBookings": [
     {
+      "bookingId": "f04fbbd9-1445-4325-9742-da05c97514eb",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
+      "date": "Fri, 08 Sep 2017",
+      "time": "10:00"
+    },
+    {
       "bookingId": "2281b217-578d-4fb1-ace4-5b57dbe2be4c",
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
@@ -66,11 +73,11 @@
       "time": "11:00"
     },
     {
-      "bookingId": "f04fbbd9-1445-4325-9742-da05c97514eb",
+      "bookingId": "60bfa116-7a46-4b99-ac56-df8bd6b06fab",
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
-      "date": "Fri, 08 Sep 2017",
-      "time": "10:00"
+      "date": "Wed, 06 Sep 2017",
+      "time": ""
     }
   ]
 }

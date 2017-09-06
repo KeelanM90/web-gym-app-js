@@ -28,6 +28,14 @@ handlebars.registerHelper('getSessionButton', function (trainerId, parentClass, 
   }
 });
 
+handlebars.registerHelper('getMemberName', function (members, memberId) {
+  for (let i = 0; i < members.length; i++) {
+    if (members[i].id == memberId) {
+      return members[i].name;
+    }
+  }
+});
+
 handlebars.registerHelper('getClassButton', function (trainerId, thisClass, memberId) {
   const sessions = thisClass.sessions;
   let full = true;

@@ -61,4 +61,11 @@
             <button class="ui blue submit button">Add Booking</button>
         </form>
     </div>
+    <div class="column">
+        {{#each bookings}}
+            <div class="ui segment form">
+                {{getMemberName ../members memberId}}
+            </div>
+        {{/each}}
+    </div>
 </div>
