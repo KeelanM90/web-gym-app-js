@@ -1,4 +1,28 @@
 {{> menu id="classes"}}
+<form class="ui segment form" action="viewclasses" method="POST" enctype="multipart/form-data">
+    <div class="fields">
+        <div class="eight wide field">
+            <label> Search Term </label>
+            <div class="ui fluid icon input">
+                <input type="text" placeholder="Search..." name="search">
+                <i class="search icon"></i>
+            </div>
+        </div>
+        <div class="four wide field">
+            <label> Difficulty </label>
+            <select class="ui dropdown" name="difficultysearch">
+                <option value="" hidden> Difficulty Level</option>
+                <option value="Beginner"> Beginner</option>
+                <option value="Intermediate"> Intermediate</option>
+                <option value="Advanced"> Advanced</option>
+            </select>
+        </div>
+        <div class="four wide field">
+            <label> &nbsp; </label>
+            <button class="ui right floated blue submit button">Find Classes</button>
+        </div>
+    </div>
+</form>
 {{#each trainersClasses}}
     {{#each classes}}
         <div class="ui raised segment">

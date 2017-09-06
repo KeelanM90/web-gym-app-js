@@ -25,6 +25,29 @@ const classStore = {
     return classes;
   },
 
+  searchClasses(searchTerm, difficulty) {
+    const allClasses = this.getAllClasses();
+    let foundTrainersClasses = [];
+    for (let i = 0; i < allClasses.length; i++) {
+      foundTrainersClasses.push({
+        trainerId: allClasses[i].trainerId,
+        classes: [],
+      });
+      let oldTrainersClasses = allClasses[i].classes;
+      let newTrainersClasses = _.find(foundTrainersClasses, { trainerId: allClasses[i].trainerId });
+      for (let j = 0; j < oldTrainersClasses.length; j++) {
+        if (difficulty != '')
+          if (difficulty == oldTrainersClasses[j].difficulty) {
+          newTrainersClasses.classes.push(oldTrainersClasses[j]);
+        }
+      }
+    }
+
+    //logger.debug(foundTrainersClasses);
+
+    return foundTrainersClasses;
+  },
+
   getTrainersClasses(trainerId) {
     const classes = this.store.findOneBy(this.collection, { trainerId: trainerId }).classes;
     return classes;

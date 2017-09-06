@@ -23,6 +23,7 @@ router.get('/deletemember/:id', accounts.deleteMember);
 router.get('/dashboard', dashboard.index);
 router.get('/classes', classes.index);
 router.get('/viewclasses', classes.viewClasses);
+router.post('/viewclasses', classes.viewClasses);
 router.get('/enroll/:trainerid/:classid/:sessionid', classes.enrollInSession);
 router.get('/unenroll/:trainerid/:classid/:sessionid', classes.unenrollFromSession);
 router.get('/enrollall/:trainerid/:classid', classes.enrollAll);

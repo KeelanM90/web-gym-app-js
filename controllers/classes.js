@@ -35,10 +35,20 @@ const classes = {
 
   viewClasses(request, response) {
     logger.info('classes rendering');
+    let classes;
+    const search = request.body.search;
+    const difficulty = request.body.difficultysearch;
+    if (search == null && difficulty == null) {
+      classes = classStore.getAllClasses();
+    } else {
+      classes = classStore.searchClasses(search, difficulty);
+    }
+
+    logger.info(difficulty);
     const loggedinmember = accounts.getCurrentMember(request);
     const viewData = {
       title: 'Classes',
-      trainersClasses: classStore.getAllClasses(),
+      trainersClasses: classes,
       member: loggedinmember,
     };
     response.render('viewclasses', viewData);

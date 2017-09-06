@@ -15,11 +15,7 @@
               "date": "Fri, 22 Sep 2017",
               "starttime": "10:00",
               "endtime": "12:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "60880fa8-89a7-44d0-a27f-bd4da57734d4",
@@ -37,11 +33,7 @@
               "date": "Fri, 06 Oct 2017",
               "starttime": "10:00",
               "endtime": "12:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             }
           ],
           "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554701/mjlsbk8iwhlbctnp9zwo.jpg"
@@ -78,9 +70,6 @@
               "enrollments": [
                 {
                   "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-                },
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             },
@@ -96,22 +85,14 @@
               "date": "Tue, 17 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "f3dd1e9a-8885-44a4-8e05-3952cdb15dac",
               "date": "Tue, 24 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "968cdcd4-4410-4368-9377-24acfb9b8c89",
@@ -121,9 +102,6 @@
               "enrollments": [
                 {
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a85c0"
-                },
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             }
