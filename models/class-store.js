@@ -36,14 +36,13 @@ const classStore = {
       let oldTrainersClasses = allClasses[i].classes;
       let newTrainersClasses = _.find(foundTrainersClasses, { trainerId: allClasses[i].trainerId });
       for (let j = 0; j < oldTrainersClasses.length; j++) {
-        if (difficulty != '')
-          if (difficulty == oldTrainersClasses[j].difficulty) {
-          newTrainersClasses.classes.push(oldTrainersClasses[j]);
+        if (oldTrainersClasses[j].name.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1) {
+          if (difficulty == '' || difficulty == oldTrainersClasses[j].difficulty) {
+            newTrainersClasses.classes.push(oldTrainersClasses[j]);
+          }
         }
       }
     }
-
-    //logger.debug(foundTrainersClasses);
 
     return foundTrainersClasses;
   },

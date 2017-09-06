@@ -1,41 +1,6 @@
 {{> trainermenu id="classes"}}
 
 <div class="ui raised segment">
-    <div class="ui centered three stackable cards">
-        {{#each classes}}
-            <div class="ui card">
-                <div class="image">
-                    {{#if img}}
-                        <img style="height: 230px; object-fit: cover" src="{{img}}">
-                    {{else}}
-                        <img style="height: 230px; object-fit: cover" src="https://semantic-ui.com/images/wireframe/image.png">
-                    {{/if}}
-                </div>
-                <div class="content">
-                    <a class="header">{{name}}</a>
-                    <div class="meta">
-                        <span><i class="bar chart icon"></i> Difficulty: {{difficulty}}</span>
-                    </div>
-                    <div class="description">
-                        {{description}}
-                    </div>
-                </div>
-                <div class="extra content">
-                    <a>
-                        <i class="user icon"></i>
-                        {{capacity}} Places
-                        <a href="classes/{{../trainer.id}}/deleteclass/{{classId}}" class="ui right floated red icon button">
-                            <i class="trash icon"></i>
-                        </a>
-                        <a href="classsettings/{{classId}}" class="ui right floated blue icon button">
-                            <i class="pencil icon"></i>
-                        </a>
-                    </a>
-                </div>
-            </div>
-        {{/each}}
-    </div>
-
     <form class="ui segment form" onsubmit="return checkform()" action="classes/{{trainer.id}}/addclass" method="POST"  enctype="multipart/form-data">
         <h2 class="ui header">
             <i class="add to calendar icon"></i>
@@ -143,7 +108,7 @@
             document.getElementById('errorheader').innerHTML = 'We don\'t have a time machine!';
             document.getElementById('errortxt').innerHTML = 'The classes ending time must be after the start time.';
             document.getElementById('erroritem').style.display = 'inline';
-          return false;
+            return false;
         }
         return true;
     }

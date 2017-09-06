@@ -54,6 +54,19 @@ const classes = {
     response.render('viewclasses', viewData);
   },
 
+  classSettings(request, response) {
+    logger.info('classes rendering');
+    let classes;
+
+    const loggedinmember = accounts.getCurrentMember(request);
+    const viewData = {
+      title: 'Classes',
+      trainersClasses: classes,
+      member: loggedinmember,
+    };
+    response.render('viewclasses', viewData);
+  },
+
   addClass(request, response) {
     const trainerId = request.params.trainerid;
 
