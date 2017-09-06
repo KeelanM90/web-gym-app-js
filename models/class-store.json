@@ -5,17 +5,21 @@
       "classes": [
         {
           "classId": "7bb51d5b-2071-48e7-84c6-d2c3cdb07bcb",
-          "name": "Lugash's Ballet Classes",
-          "difficulty": "Advanced",
-          "capacity": "1",
-          "description": "You should not fear Lugash. You should only fear dying surround by only family and loved ones and no medals to prove you are not worthless. But for now…YOU ARE ALL WORTHLESS! …..I am sorry, children. Lugash must go to anger management class. WORTHLESS ANGER MANAGEMENT CLASS! I HATE IT SO MUCH!",
+          "name": "Lugash's Ballet Class",
+          "difficulty": "Intermediate",
+          "capacity": "2",
+          "description": "You should not fear Lugash. You should only fear dying surround by only family and loved ones and no medals to prove you are not worthless. But for now…YOU ARE ALL WORTHLESS! …..I am sorry, children. Lugash must go to anger management class. WORTHLESS ANGER MANAGEMENT CLASS! I HATE IT SO MUCH!Test",
           "sessions": [
             {
               "sessionId": "a15a201c-63a6-4d0f-98da-cf68fdc8cb2d",
               "date": "Fri, 22 Sep 2017",
               "starttime": "10:00",
               "endtime": "12:15",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             },
             {
               "sessionId": "60880fa8-89a7-44d0-a27f-bd4da57734d4",
@@ -33,7 +37,11 @@
               "date": "Fri, 06 Oct 2017",
               "starttime": "10:00",
               "endtime": "12:15",
-              "enrollments": []
+              "enrollments": [
+                {
+                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
+                }
+              ]
             }
           ],
           "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554701/mjlsbk8iwhlbctnp9zwo.jpg"
@@ -47,8 +55,7 @@
           "sessions": [
             {
               "sessionId": "90a22115-00d8-4ef9-94ef-dd31fee5b74f",
-              "date": "Tue, 26 Sep 2017",
-              "starttime": "13:45",
+              "starttime": "11:45",
               "endtime": "14:15",
               "enrollments": [
                 {
@@ -60,7 +67,8 @@
                 {
                   "memberId": "3ad52697-6d98-4d80-8273-08cde55a86c0"
                 }
-              ]
+              ],
+              "date": "Wed, 06 Sep 2017"
             },
             {
               "sessionId": "3f2b6d33-88eb-4904-9ad6-af08c847edff",
@@ -70,9 +78,6 @@
               "enrollments": [
                 {
                   "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-                },
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             },
@@ -80,51 +85,36 @@
               "sessionId": "80123e61-d4e4-4af3-8a67-ef3a120f2a3f",
               "date": "Tue, 10 Oct 2017",
               "starttime": "13:45",
-              "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "endtime": "12:15",
+              "enrollments": []
             },
             {
               "sessionId": "afa93c66-3213-4d67-92c2-ebf8004cc5c2",
               "date": "Tue, 17 Oct 2017",
               "starttime": "13:45",
               "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "enrollments": []
             },
             {
               "sessionId": "f3dd1e9a-8885-44a4-8e05-3952cdb15dac",
-              "date": "Tue, 24 Oct 2017",
-              "starttime": "13:45",
-              "endtime": "14:15",
-              "enrollments": [
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
-                }
-              ]
+              "date": "Wed, 18 Oct 2017",
+              "starttime": "14:45",
+              "endtime": "15:15",
+              "enrollments": []
             },
             {
               "sessionId": "968cdcd4-4410-4368-9377-24acfb9b8c89",
-              "date": "Tue, 31 Oct 2017",
+              "date": "Tuesday, 03/10",
               "starttime": "13:45",
               "endtime": "14:15",
               "enrollments": [
                 {
                   "memberId": "3ad52697-6d98-4d80-8273-084de55a85c0"
-                },
-                {
-                  "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0"
                 }
               ]
             }
           ],
-          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504554944/z9ugyhzlccftwdui9jfi.jpg"
+          "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504706980/vzmfcxhpdahziyxcqvno.jpg"
         },
         {
           "classId": "b2b6fd25-3b66-440c-a19c-b41fa627168c",

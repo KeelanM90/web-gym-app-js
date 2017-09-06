@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title> {{title}} </title>
     <meta charset="UTF-8">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  </head>
-  <body>
-    <section class="ui container">
-      {{{body}}}
-    </section>
-    <script>
-        $('.dropdown').dropdown();
-        $('.ui.form')
-                .form({
-                    fields: {
-                        name       : 'empty',
-                        gender     : 'empty',
-                        email      : 'empty',
-                        password   : 'empty',
-                        address    : 'empty',
-                        weight     : 'empty',
-                        height     : 'empty',
-                        difficulty : 'empty',
-                        capacity   : 'empty',
-                    }
-                })
-        ;
-    </script>
-  </body>
+    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+
+</head>
+<body>
+<section class="ui container">
+    {{{body}}}
+</section>
+<script>
+    $('.dropdown').dropdown();
+    $('.ui.form')
+            .form({
+                fields: {
+                    name: 'empty',
+                    gender: 'empty',
+                    email: 'empty',
+                    password: 'empty',
+                    address: 'empty',
+                    weight: 'empty',
+                    height: 'empty',
+                    difficulty: 'empty',
+                    capacity: 'empty',
+                }
+            })
+    ;
+</script>
+</body>
 </html>

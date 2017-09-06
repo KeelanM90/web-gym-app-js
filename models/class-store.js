@@ -25,6 +25,19 @@ const classStore = {
     return classes;
   },
 
+  getClass(trainerId, classId) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    return thisClass;
+  },
+
+  getSession(trainerId, classId, sessionId) {
+    const trainersClasses = this.getTrainersClasses(trainerId);
+    const thisClass = _.find(trainersClasses, { classId: classId });
+    const session = _.find(thisClass.sessions, { sessionId: sessionId });
+    return session;
+  },
+
   searchClasses(searchTerm, difficulty) {
     const allClasses = this.getAllClasses();
     let foundTrainersClasses = [];

@@ -18,9 +18,9 @@
                     <div class="field">
                         <label>Gender</label>
                         <select class="ui dropdown" name="gender" required>
-                            <option value="{{member.gender}}" hidden>{{member.gender}}</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="" hidden> Gender </option>
+                            <option value="Male" {{selectionEquals member.gender 'Male'}}>Male</option>
+                            <option value="Female" {{selectionEquals member.gender 'Female'}}>Female</option>
                         </select>
                     </div>
                 </div>

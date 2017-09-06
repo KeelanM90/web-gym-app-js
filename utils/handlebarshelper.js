@@ -9,6 +9,12 @@ handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
 });
 
+handlebars.registerHelper('selectionEquals', function (str1, str2) {
+  if (str1 === str2) {
+    return 'selected';
+  }
+});
+
 handlebars.registerHelper('getSessionButton', function (trainerId, parentClass, session, memberId) {
   const enrollments = session.enrollments;
   if (_.find(session.enrollments, { memberId: memberId }) != null) {

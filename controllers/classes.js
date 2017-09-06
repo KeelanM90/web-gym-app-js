@@ -55,16 +55,54 @@ const classes = {
   },
 
   classSettings(request, response) {
-    logger.info('classes rendering');
-    let classes;
+    const classId = request.params.classid;
+    const loggedintrainer = accounts.getCurrentTrainer(request);
+    const thisClass = classStore.getClass(loggedintrainer.id, classId);
 
-    const loggedinmember = accounts.getCurrentMember(request);
     const viewData = {
       title: 'Classes',
-      trainersClasses: classes,
-      member: loggedinmember,
+      trainer: loggedintrainer,
+      thisClass: thisClass,
     };
-    response.render('viewclasses', viewData);
+    response.render('classsettings', viewData);
+  },
+
+  editClass(request, response) {
+    const classId = request.params.classid;
+    const loggedintrainer = accounts.getCurrentTrainer(request);
+    const thisClass = classStore.getClass(loggedintrainer.id, classId);
+
+    thisClass.name = request.body.name;
+    thisClass.difficulty = request.body.difficulty;
+    thisClass.capacity = request.body.capacity;
+    thisClass.description = request.body.description;
+    const picture = request.files.picture;
+
+    if (picture != null) {
+      classStore.addPicture(thisClass, picture, function () {
+            classStore.store.save();
+            response.redirect('/classes');
+          }
+      );
+    } else {
+      classStore.store.save();
+      response.redirect('/classes');
+    }
+  },
+
+  updateSession(request, response) {
+    const classId = request.params.classid;
+    const sessionId = request.params.sessionid;
+    const loggedintrainer = accounts.getCurrentTrainer(request);
+    const session = classStore.getSession(loggedintrainer.id, classId, sessionId);
+
+    logger.debug(session);
+    session.date = dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy');
+    session.starttime = request.body.starttime;
+    session.endtime = request.body.endtime;
+
+    classStore.store.save();
+    response.redirect('/classsettings/' + classId);
   },
 
   addClass(request, response) {

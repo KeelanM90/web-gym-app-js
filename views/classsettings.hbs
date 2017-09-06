@@ -1,115 +1,91 @@
 {{> trainermenu id="classes"}}
 
 <div class="ui raised segment">
-    <form class="ui segment form" onsubmit="return checkform()" action="classes/{{trainer.id}}/addclass" method="POST"  enctype="multipart/form-data">
-        <h2 class="ui header">
-            <i class="add to calendar icon"></i>
-            <div class="content">
-                Add Class
-            </div>
-        </h2>
-        <div class="ui grid">
-            <div class="six wide column">
+    <div class="ui two column grid">
+        <div class=" six wide column">
+            <form class="ui segment form" onsubmit="return checkform()" action="/editclass/{{thisClass.classId}}"
+                  method="POST" enctype="multipart/form-data">
+                <h2 class="ui header">
+                    <i class="calendar icon"></i>
+                    <div class="content">
+                        Edit Class
+                    </div>
+                </h2>
                 <div class="field">
                     <label>Class Name</label>
-                    <input placeholder="Class Name" type="text" name="name" required>
+                    <input placeholder="Class Name" type="text" name="name" value="{{thisClass.name}}" required>
                 </div>
                 <div class="field">
                     <label> Description </label>
-                    <textarea class="ui fluid" placeholder="Description" rows="5" maxlength="300" name="description" required></textarea>
+                    <textarea class="ui fluid" placeholder="Description" rows="5" maxlength="300"
+                              name="description"
+                              required>{{thisClass.description}}</textarea>
                 </div>
-            </div>
-            <div class="ten wide column">
-                <div class="fields">
-                    <div class="three wide field">
+                <div class="two fields">
+                    <div class="field">
                         <label>Capacity</label>
-                        <input placeholder="Capacity" type="number" min="1" step="1" name="capacity" required>
+                        <input placeholder="Capacity" type="number" min="1" step="1" name="capacity"
+                               value="{{thisClass.capacity}}" required>
                     </div>
-                    <div class="six wide field">
+                    <div class="fluid field">
                         <label> Difficulty </label>
                         <select class="ui fluid dropdown" name="difficulty" required>
-                            <option value="" hidden> Difficulty Level </option>
-                            <option value="Beginner"> Beginner </option>
-                            <option value="Intermediate"> Intermediate </option>
-                            <option value="Advanced"> Advanced </option>
+                            <option value="" hidden></option>
+                            <option value="Beginner" {{selectionEquals thisClass.difficulty 'Beginner'}}>
+                                Beginner
+                            </option>
+                            <option value="Intermediate" {{selectionEquals thisClass.difficulty
+                                                                           'Intermediate'}}> Intermediate
+                            </option>
+                            <option value="Advanced" {{selectionEquals thisClass.difficulty 'Advanced'}}>
+                                Advanced
+                            </option>
                         </select>
-                    </div>
-                    <div class="seven wide field">
-                        {{> imageupload}}
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="six wide field">
-                        <label> Week of First Class  </label>
-                        <select class="ui fluid dropdown" name="startingweek" required>
-                            <option value="" hidden> Starting Week </option>
-                            {{#each weeks}}
-                                <option value="{{date}}"> Starting {{readableDate}} </option>
-                            {{/each}}
-                        </select>
-                    </div>
-                    <div class="four wide field">
-                        <label> Class Term Length </label>
-                        <select class="ui fluid dropdown" name="term" required>
-                            <option value="" hidden> Duration </option>
-                            <option value="1"> 1 Week </option>
-                            <option value="2"> 2 Weeks </option>
-                            <option value="3"> 3 Weeks </option>
-                            <option value="4"> 4 Weeks </option>
-                            <option value="5"> 5 Weeks </option>
-                            <option value="6"> 6 Weeks </option>
-                            <option value="7"> 7 Weeks </option>
-                            <option value="8"> 8 Weeks </option>
-                            <option value="9"> 9 Weeks </option>
-                            <option value="10"> 10 Weeks </option>
-                            <option value="11"> 11 Weeks </option>
-                            <option value="12"> 12 Weeks </option>
-                        </select>
-                    </div>
-                    <div class="three wide field">
-                        <label> Start Time </label>
-                        <input type="time" id="starttime" name="starttime">
-                    </div>
-                    <div class="three wide field">
-                        <label>End Time</label>
-                        <input type="time" id="endtime" name="endtime">
                     </div>
                 </div>
                 <div class="field">
-                    <label> Days </label>
-                    <select name="days" multiple="" class="ui fluid dropdown" required>
-                        <option value=""> Days </option>
-                        <option value="0"> Monday </option>
-                        <option value="1"> Tuesday </option>
-                        <option value="2"> Wednesday </option>
-                        <option value="3"> Thursday </option>
-                        <option value="4"> Friday </option>
-                        <option value="5"> Saturday </option>
-                        <option value="6"> Sunday </option>
-                    </select>
+                    {{> imageupload}}
                 </div>
-            </div>
+                <button class="ui blue submit button">Edit Class</button>
+            </form>
         </div>
-        <div class="ui form error" id="erroritem" hidden>
-            <div class="ui error message">
-                <div id="errorheader" class="header"></div>
-                <p id="errortxt"></p>
-            </div>
+        <div class="ten wide column">
+            {{#each thisClass.sessions}}
+                <form class="ui segment form" onsubmit="return checkform()"
+                      action="/updatesession/{{../thisClass.classId}}/{{sessionId}}"
+                      method="POST">
+                    <h3>Session: {{date}}</h3>
+                    <div class="fields">
+                        <div class="field">
+                            <label> Date </label>
+                            <div class="ui calendar" id="calendar{{sessionId}}">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="Date" name="sessiondate" value="{{date}}">
+                                </div>
+                            </div>
+                            <script>
+                                $('#calendar{{sessionId}}').calendar({
+                                    type: 'date',
+                                    minDate: new Date(),
+                                });
+                            </script>
+                        </div>
+                        <div class="field">
+                            <label> Start Time </label>
+                            <input type="time" id="starttime{{sessionId}}" value="{{starttime}}" name="starttime">
+                        </div>
+                        <div class="field">
+                            <label> End Time</label>
+                            <input type="time" id="endtime{{sessionId}}" value="{{endtime}}" name="endtime">
+                        </div>
+                        <div class="field">
+                            <label> &nbsp; </label>
+                            <button class="ui blue submit button">Reschedule Session</button>
+                        </div>
+                    </div>
+                </form>
+            {{/each}}
         </div>
-        <button class="ui blue submit button">Add Class</button>
-    </form>
+    </div>
 </div>
-<script>
-    function checkform() {
-        let time1 = document.getElementById('starttime').value;
-        let time2 = document.getElementById('endtime').value;
-
-        if (time2 <= time1) {
-            document.getElementById('errorheader').innerHTML = 'We don\'t have a time machine!';
-            document.getElementById('errortxt').innerHTML = 'The classes ending time must be after the start time.';
-            document.getElementById('erroritem').style.display = 'inline';
-            return false;
-        }
-        return true;
-    }
-</script>
