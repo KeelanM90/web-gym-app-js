@@ -25,6 +25,10 @@ const userStore = {
     return this.store.findAll(this.collection);
   },
 
+  getAllTrainers() {
+    return this.trainerstore.findAll(this.trainercollection);
+  },
+
   addMember(member) {
     this.store.add(this.collection, member);
     this.store.save();
@@ -59,6 +63,7 @@ const userStore = {
       }
       );
     }
+
     imageFile.mv('tempimage', err => {
       if (!err) {
         cloudinary.uploader.upload('tempimage', result => {

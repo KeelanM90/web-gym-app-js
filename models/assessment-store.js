@@ -7,7 +7,9 @@ const logger = require('../utils/logger');
 const assessmentStore = {
 
   store: new JsonStore('./models/assessment-store.json', { membersAssessments: [] }),
+  bookingStore: new JsonStore('./models/assessment-store.json', { assessmentBookings: [] }),
   collection: 'membersAssessments',
+  bookingCollection: 'assessmentBookings',
 
   getAssessments(memberId) {
     const assessments = this.store.findOneBy(this.collection, { memberId: memberId }).assessments;
@@ -87,6 +89,21 @@ const assessmentStore = {
 
     assessment.comment = comment;
     this.store.save();
+  },
+
+  getMembersBookings(memberId) {
+    const bookings = this.bookingCollection.find(this.bookingCollection, { memberId: memberId });
+    if (assessments.length > 0) {
+      assessments.sort(function (a, b) {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+
+            return dateB - dateA;
+          }
+      );
+    }
+
+    return assessments;
   },
 };
 

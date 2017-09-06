@@ -4,6 +4,7 @@ const accounts = require('./accounts');
 const logger = require('../utils/logger');
 const dateformat = require('dateformat');
 const uuid = require('uuid');
+const userstore = require('../models/user-store');
 const assessmentstore = require('../models/assessment-store');
 const analyticshelper = require('../utils/analyticshelper');
 const handlebars = require('../utils/handlebarshelper.js');
@@ -12,9 +13,11 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInMember = accounts.getCurrentMember(request);
+    logger.debug(userstore.getAllTrainers());
     const viewData = {
       title: 'Gym App Dashboard',
       member: loggedInMember,
+      trainers: userstore.getAllTrainers(),
       assessments: assessmentstore.getAssessmentsTrends(loggedInMember, analyticshelper.idealBodyWeight(loggedInMember)),
       bmi: analyticshelper.calculateBMI(loggedInMember),
       bmiCategory: analyticshelper.getBMICategory(loggedInMember),
