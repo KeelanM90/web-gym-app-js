@@ -13,7 +13,6 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInMember = accounts.getCurrentMember(request);
-    logger.debug(userstore.getAllTrainers());
     const viewData = {
       title: 'Gym App Dashboard',
       member: loggedInMember,
@@ -39,6 +38,19 @@ const dashboard = {
       hips: request.body.hips,
     };
     assessmentstore.addAssessment(memberId, assessment);
+    response.redirect('/dashboard/');
+  },
+
+  createBooking(request, response) {
+    const member = accounts.getCurrentMember(request);
+    const booking = {
+      bookingId: uuid(),
+      memberId: member.id,
+      trainerId: request.body.trainer,
+      date: dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy'),
+      time: request.body.starttime,
+    };
+    assessmentstore.addBooking(booking);
     response.redirect('/dashboard/');
   },
 

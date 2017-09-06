@@ -5,6 +5,8 @@ const logger = require('../utils/logger');
 const userstore = require('../models/user-store');
 const assessmentstore = require('../models/assessment-store');
 const analyticshelper = require('../utils/analyticshelper');
+const dateformat = require('dateformat');
+const uuid = require('uuid');
 
 const trainerdashboard = {
   index(request, response) {
@@ -19,6 +21,7 @@ const trainerdashboard = {
       title: 'Gym App Trainer Dashboard',
       trainer: loggedintrainer,
       members: members,
+      bookings: assessmentstore.getTrainersBookings(loggedintrainer.id);
     };
     response.render('trainerdashboard', viewData);
   },
@@ -48,6 +51,19 @@ const trainerdashboard = {
 
     logger.info('Updating comment');
     response.redirect(`/viewMember/` + memberId);
+  },
+
+  createBooking(request, response) {
+    const trainer = accounts.getCurrentTrainer(request);
+    const booking = {
+      bookingId: uuid(),
+      memberId: request.body.member,
+      trainerId: trainer.id,
+      date: dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy'),
+      time: request.body.starttime,
+    };
+    assessmentstore.addBooking(booking);
+    response.redirect('/trainerdashboard/');
   },
 };
 

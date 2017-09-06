@@ -27,10 +27,15 @@ router.post('/viewclasses', classes.viewClasses);
 router.post('/editclass/:classid', classes.editClass);
 router.get('/classsettings/:classid', classes.classSettings);
 router.post('/updatesession/:classid/:sessionid', classes.updateSession);
+
 router.get('/enroll/:trainerid/:classid/:sessionid', classes.enrollInSession);
 router.get('/unenroll/:trainerid/:classid/:sessionid', classes.unenrollFromSession);
 router.get('/enrollall/:trainerid/:classid', classes.enrollAll);
 router.get('/unenrollall/:trainerid/:classid', classes.unenrollAll);
+
+router.post('/createbooking', dashboard.createBooking);
+router.post('/trainercreatebooking', trainerdashboard.createBooking);
+
 router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);

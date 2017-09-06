@@ -3,20 +3,62 @@
 <div class="ui raised segment">
     <div class="ui relaxed divided list">
         {{#each members}}
-        <div class="item">
-            {{#if img}}
-                <img class="ui avatar image" src="{{img}}"/>
-            {{else}}
-                <i class="ui big {{toLowerCase gender}} icon"></i>
-            {{/if}}
-            <div class="content">
-                <div class="header">
-                    <a href="/viewmember/{{id}}">{{name}}</a>
-                    <a href="/deletemember/{{id}}"><i class="red icon trash"></i></a>
+            <div class="item">
+                {{#if img}}
+                    <img class="ui avatar image" src="{{img}}"/>
+                {{else}}
+                    <i class="ui big {{toLowerCase gender}} icon"></i>
+                {{/if}}
+                <div class="content">
+                    <div class="header">
+                        <a href="/viewmember/{{id}}">{{name}}</a>
+                        <a href="/deletemember/{{id}}"><i class="red icon trash"></i></a>
+                    </div>
+                    {{assessmentssize}} assessments
                 </div>
-                {{assessmentssize}} assessments
             </div>
-        </div>
         {{/each}}
+    </div>
+</div>
+<div class="ui two column grid">
+    <div class="column">
+        <form class="ui segment form" action="/trainercreatebooking" method="POST">
+            <h3 class="ui header">Add Assessment Booking</h3>
+            <div class="two fields">
+                <div class="field">
+                    <label>Member</label>
+                    <select class="ui dropdown" name="member" required>
+                        <option value="" hidden>Select Member</option>
+                        {{#each members}}
+                            <option value="{{id}}">
+                                {{name}}
+                            </option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label> Date </label>
+                    <div class="ui calendar" id="calendar{{sessionId}}">
+                        <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            <input type="text" placeholder="Date" name="sessiondate" value="{{date}}">
+                        </div>
+                    </div>
+                    <script>
+                        $('#calendar{{sessionId}}').calendar({
+                            type: 'date',
+                            minDate: new Date(),
+                        });
+                    </script>
+                </div>
+                <div class="field">
+                    <label> Start Time </label>
+                    <input type="time" id="starttime{{sessionId}}" value="{{starttime}}" name="starttime">
+                </div>
+            </div>
+            <button class="ui blue submit button">Add Booking</button>
+        </form>
     </div>
 </div>

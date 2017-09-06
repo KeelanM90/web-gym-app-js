@@ -32,7 +32,9 @@ const assessmentStore = {
       let lastWeight = member.weight;
       if (i < assessments.length - 1) {
         lastWeight = assessments[i + 1].weight;
-      };
+      }
+
+      ;
 
       let deltaCurrent = assessments[i].weight - idealWeight;
       let deltaPrevious = lastWeight - idealWeight;
@@ -52,7 +54,9 @@ const assessmentStore = {
       } else {
         assessments[i].trend = 'blue';
       }
-    };
+    }
+
+    ;
 
     return assessments;
   },
@@ -92,9 +96,10 @@ const assessmentStore = {
   },
 
   getMembersBookings(memberId) {
-    const bookings = this.bookingCollection.find(this.bookingCollection, { memberId: memberId });
-    if (assessments.length > 0) {
-      assessments.sort(function (a, b) {
+    const bookings = this.bookingStore.findAll(this.bookingCollection);
+    const membersBookings = _.filter(bookings, { memberId: memberId });
+    if (bookings.length > 0) {
+      bookings.sort(function (a, b) {
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
 
@@ -103,7 +108,39 @@ const assessmentStore = {
       );
     }
 
-    return assessments;
+    return membersBookings;
+  },
+
+  getTrainersBookings(trainerId) {
+    const bookings = this.bookingStore.findAll(this.bookingCollection);
+    const trainersBookings = _.filter(bookings, { trainerId: trainerId });
+    if (bookings.length > 0) {
+      bookings.sort(function (a, b) {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+
+            return dateB - dateA;
+          }
+      );
+    }
+
+    return trainersBookings;
+  },
+
+  addBooking(booking) {
+    const trainersBookings = this.getTrainersBookings(booking.trainerId);
+    const trainersBookingsOnDate = _.filter(trainersBookings, { date: booking.date });
+    let trainerIsBooked = false;
+    for (let i = 0; i < trainersBookingsOnDate.length; i++) {
+      if (trainersBookingsOnDate[i].time === booking.time) {
+        trainerIsBooked = true;
+      }
+    }
+
+    if (!trainerIsBooked) {
+      this.bookingStore.add(this.bookingCollection, booking);
+      this.bookingStore.save();
+    }
   },
 };
 
