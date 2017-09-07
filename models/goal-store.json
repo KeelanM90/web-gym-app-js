@@ -1,0 +1,27 @@
+{
+  "membersGoals": [
+    {
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "goals": [
+        {
+          "goalId": "3ad52697-6d98-4d80-8273-084de55a86de",
+          "date": "Wed, 30 Aug 2017",
+          "weight": "68",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1"
+        }
+      ]
+    },
+    {
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "goals": []
+    },
+    {
+      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
+      "goals": []
+    }
+  ]
+}

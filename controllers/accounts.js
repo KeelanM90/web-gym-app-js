@@ -4,6 +4,7 @@ const userstore = require('../models/user-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
 const assessmentstore = require('../models/assessment-store');
+const goalstore = require('../models/goal-store');
 
 const accounts = {
 
@@ -39,6 +40,7 @@ const accounts = {
     userstore.addMember(member);
     logger.info(`registering ${member.email}`);
     assessmentstore.createEmptyArray(member.id);
+    goalstore.createEmptyArray(member.id);
     response.redirect('/');
   },
 
@@ -97,6 +99,7 @@ const accounts = {
   deleteMember(request, response) {
     const memberId = request.params.id;
     assessmentstore.deleteMembersAssessments(memberId);
+    goalstore.deleteMembersGoals(memberId);
     userstore.deleteMember(memberId);
     response.redirect('/trainerdashboard/');
   },
