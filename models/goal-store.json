@@ -4,17 +4,6 @@
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "goals": [
         {
-          "goalId": "3ad52697-6d98-4d80-8273-084de55a86de",
-          "date": "Wed, 30 Aug 2017",
-          "weight": "68",
-          "chest": "1",
-          "thigh": "1",
-          "upperArm": "1",
-          "waist": "1",
-          "hips": "1",
-          "status": "assessment found"
-        },
-        {
           "goalId": "f612cc3c-8b20-4606-a1eb-81446dfc2b4b",
           "date": "Sat, 30 Sep 2017",
           "weight": "0",
@@ -23,8 +12,9 @@
           "upperArm": "0",
           "waist": "1",
           "hips": "1",
+          "tolerance": "5",
           "description": "description",
-          "status": "future"
+          "status": "ongoing"
         },
         {
           "goalId": "37c2e901-963e-4c88-a0a8-3c11281fa0f0",
@@ -35,8 +25,9 @@
           "upperArm": "1",
           "waist": "0",
           "hips": "1",
+          "tolerance": "5",
           "description": "description",
-          "status": "future"
+          "status": "ongoing"
         },
         {
           "goalId": "1fa608b9-1fa3-4d62-bdcb-3f59a01c4ce0",
@@ -47,31 +38,58 @@
           "upperArm": "0",
           "waist": "1",
           "hips": "1",
+          "tolerance": "5",
           "description": "description",
-          "status": "future"
+          "status": "ongoing"
         },
         {
           "goalId": "5df34609-5503-4d84-8298-afbf4c6b9fd6",
           "date": "Thu, 07 Sep 2017",
-          "weight": "123",
+          "weight": "1",
           "chest": "1",
-          "thigh": "12",
-          "upperArm": "321",
-          "waist": "312",
-          "hips": "312",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1",
+          "tolerance": "2",
           "description": "13223",
           "status": "pending"
         },
         {
           "goalId": "53dcd684-759f-4820-b7c1-dface8f7d43b",
-          "date": "Sun, 3 Sep 2017",
-          "weight": "0",
-          "chest": "0",
-          "thigh": "1",
-          "upperArm": "0",
-          "waist": "1",
-          "hips": "1",
+          "date": "Fri, 1 Sep 2017",
+          "weight": "20",
+          "chest": "20",
+          "thigh": "20",
+          "upperArm": "20",
+          "waist": "20",
+          "hips": "20",
+          "tolerance": "5",
           "description": "description"
+        },
+        {
+          "goalId": "53dcd684-759f-4820-b7c1-dface8f7d43b",
+          "date": "Sat, 2 Sep 2017",
+          "weight": "20",
+          "chest": "20",
+          "thigh": "20",
+          "upperArm": "20",
+          "waist": "20",
+          "hips": "20",
+          "tolerance": "3",
+          "description": "description"
+        },
+        {
+          "goalId": "4ab89f16-46df-4dd7-b4dc-017194e51696",
+          "date": "Fri, 08 Sep 2017",
+          "weight": "20",
+          "chest": "20",
+          "thigh": "20",
+          "upperArm": "20",
+          "waist": "20",
+          "hips": "20",
+          "tolerance": "2",
+          "description": "test"
         }
       ]
     },

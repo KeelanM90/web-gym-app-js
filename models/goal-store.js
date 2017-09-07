@@ -17,7 +17,7 @@ const goalStore = {
 
   getSortedGoals(memberId) {
     const goals = this.getGoals(memberId);
-    let sortedGoals =  _.orderBy(goals, function (value) {
+    let sortedGoals = _.orderBy(goals, function (value) {
           return new Date(value.date);
         }).reverse()
     ;
@@ -33,17 +33,46 @@ const goalStore = {
 
       if (new Date() < goalOpenDate) {
         goal.status = 'ongoing';
-      } else if (new Date() > goalOpenDate) {
+      } else {
         for (let j = 0; j < assessments.length; j++) {
           const assessment = assessments[j];
           const assessmentDate = new Date(assessment.date);
           if (assessmentDate <= goalCloseDate && assessmentDate >= goalOpenDate) {
-            if (assessment
-            break;
-          } else {
-            if (new Date() >= goalCloseDate) {
-              goal.status = 'missed';
+            let allAchieved = true;
+
+            if (assessment.weight < Number(goal.weight - goal.tolerance) || assessment.weight > Number(goal.weight + goal.tolerance)) {
+              allAchieved = false;
             }
+
+            if (assessment.chest < Number(goal.chest - goal.tolerance) || assessment.chest > Number(goal.chest + goal.tolerance)) {
+              allAchieved = false;
+            }
+
+            if (assessment.thigh < Number(goal.thigh - goal.tolerance) || assessment.thigh > Number(goal.thigh + goal.tolerance)) {
+              allAchieved = false;
+            }
+
+            if (assessment.upperArm < Number(goal.upperArm - goal.tolerance) || assessment.upperArm > Number(goal.upperArm + goal.tolerance)) {
+              allAchieved = false;
+            }
+
+            if (assessment.waist < Number(goal.waist - goal.tolerance) || assessment.waist > Number(goal.waist + goal.tolerance)) {
+              allAchieved = false;
+            }
+
+            if (assessment.hips < Number(goal.hips - goal.tolerance) || assessment.hips > Number(goal.hips + goal.tolerance)) {
+              allAchieved = false;
+            }
+
+            if (allAchieved) {
+              goal.status = 'achieved';
+            } else {
+              if (new Date() >= goalCloseDate) {
+                goal.status = 'missed';
+              }
+            }
+
+            break;
           }
         }
       }

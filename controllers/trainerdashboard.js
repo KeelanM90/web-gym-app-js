@@ -56,6 +56,7 @@ const trainerdashboard = {
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
+      tolerance: request.body.tolerance,
       description: request.body.description,
     };
     goalstore.addGoal(memberId, goal);

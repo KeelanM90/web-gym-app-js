@@ -34,7 +34,11 @@
             </div>
         </div>
         <div class="three fields">
-            <div class="ten wide field">
+            <div class="four wide field">
+                <label>Tolerance</label>
+                <input placeholder="Tolerance" type="number" step=".01" name="tolerance" required>
+            </div>
+            <div class="eight wide field">
                 <label>Description</label>
                 <input placeholder="Description" type="text" name="description" required>
             </div>
@@ -57,10 +61,11 @@
         </div>
         <button class="ui blue submit button">Add Goal</button>
     </form>
-    <table class="ui celled table middle aligned">
+    <table class="ui table center aligned">
         <thead>
         <tr>
             <th>Status</th>
+            <th>Tolerance</th>
             <th>Date</th>
             <th>Weight</th>
             <th>Chest</th>
@@ -76,6 +81,7 @@
         {{#each goals}}
             <tr>
                 <td>{{status}}</td>
+                <td>{{tolerance}}</td>
                 <td>{{date}}</td>
                 <td>{{weight}}</td>
                 <td>{{chest}}</td>
