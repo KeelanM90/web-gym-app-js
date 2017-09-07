@@ -21,6 +21,9 @@ router.post('/update', accounts.update);
 router.get('/deletemember/:id', accounts.deleteMember);
 
 router.get('/dashboard', dashboard.index);
+
+router.post('/classes/:trainerid/addclass', classes.addClass);
+router.get('/classes/:trainerid/deleteclass/:classid', classes.deleteClass);
 router.get('/classes', classes.index);
 router.get('/viewclasses', classes.viewClasses);
 router.post('/viewclasses', classes.viewClasses);
@@ -51,7 +54,8 @@ router.get('/viewmember/:id', trainerdashboard.viewMember);
 router.post('/dashboard/:id/addAssessment', dashboard.addAssessment);
 router.post('/updateComment/:id/:assessmentId', trainerdashboard.updateComment);
 router.get('/dashboard/:memberid/deleteassessment/:assessmentid', dashboard.deleteAssessment);
-router.post('/classes/:trainerid/addclass', classes.addClass);
-router.get('/classes/:trainerid/deleteclass/:classid', classes.deleteClass);
+
+router.post('/dashboard/:memberid/addgoal', dashboard.addGoal);
+router.post('/trainerdashboard/:memberid/addgoal', trainerdashboard.addGoal);
 
 module.exports = router;

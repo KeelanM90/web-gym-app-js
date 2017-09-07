@@ -1,6 +1,6 @@
 
 <div class="ui segment">
-    <form class="ui form" action="/dashboard/{{member.id}}/addgoal" method="POST">
+    <form class="ui form" action="/{{#if trainerview}}trainer{{/if}}dashboard/{{member.id}}/addgoal" method="POST">
         <h3 class="ui header">
             <i class="child icon"></i>
             Goals
@@ -35,7 +35,7 @@
         </div>
         <div class="three fields">
             <div class="ten wide field">
-                <label>Comment</label>
+                <label>Description</label>
                 <input placeholder="Description" type="text" name="description" required>
             </div>
             <div class="field">
@@ -60,6 +60,7 @@
     <table class="ui celled table middle aligned">
         <thead>
         <tr>
+            <th>Status</th>
             <th>Date</th>
             <th>Weight</th>
             <th>Chest</th>
@@ -67,13 +68,14 @@
             <th>Upper Arm</th>
             <th>Waist</th>
             <th>Hips</th>
-            <th>Comment</th>
+            <th>Description</th>
         </tr>
         </thead>
         <tbody>
 
         {{#each goals}}
             <tr>
+                <td>{{status}}</td>
                 <td>{{date}}</td>
                 <td>{{weight}}</td>
                 <td>{{chest}}</td>
@@ -81,10 +83,9 @@
                 <td>{{upperArm}}</td>
                 <td>{{waist}}</td>
                 <td>{{hips}}</td>
-                <td>{{comment}}</td>
+                <td>{{description}}</td>
             </tr>
         {{/each}}
-
         </tbody>
     </table>
 </div>

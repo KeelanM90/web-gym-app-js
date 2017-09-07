@@ -31,6 +31,7 @@ const trainerdashboard = {
     logger.info('Member view rendering');
     const memberId = request.params.id;
     const member = accounts.getMember(memberId);
+
     const viewData = {
       title: 'Gym App Trainer Dashboard',
       member: member,
@@ -39,8 +40,26 @@ const trainerdashboard = {
       bmiCategory: analyticshelper.getBMICategory(member),
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(member),
       goals: goalstore.getSortedGoals(memberId),
+      trainerview: true,
     };
     response.render('viewmember', viewData);
+  },
+
+  addGoal(request, response) {
+    const memberId = request.params.memberid;
+    const goal = {
+      goalId: uuid(),
+      date: dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy'),
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
+      description: request.body.description,
+    };
+    goalstore.addGoal(memberId, goal);
+    response.redirect('/viewmember/' + memberId);
   },
 
   booking(request, response) {
@@ -67,6 +86,7 @@ const trainerdashboard = {
     logger.debug(assessment);
     assessmentstore.addAssessment(booking.memberId, assessment);
     assessmentstore.removeBooking(booking.bookingId);
+
     response.redirect('/viewmember/' + booking.memberId);
   },
 

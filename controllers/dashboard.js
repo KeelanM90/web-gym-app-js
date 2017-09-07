@@ -14,7 +14,6 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInMember = accounts.getCurrentMember(request);
-    logger.debug(goalstore.getSortedGoals(loggedInMember.id));
     const viewData = {
       title: 'Gym App Dashboard',
       member: loggedInMember,
@@ -64,19 +63,20 @@ const dashboard = {
   },
 
   addGoal(request, response) {
-    const memberId = request.params.id;
-    const assessment = {
-      assessmentId: uuid(),
-      date: dateformat(new Date(), 'ddd, dd mmm yyyy'),
+    const memberId = accounts.getCurrentMember(request).id;
+    const goal = {
+      goalId: uuid(),
+      date: dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy'),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
+      description: request.body.description,
     };
-    assessmentstore.addGoal(memberId, assessment);
-    response.redirect('/dashboard');
+    goalstore.addGoal(memberId, goal);
+    response.redirect('/goals');
   },
 
   createBooking(request, response) {

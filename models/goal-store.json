@@ -11,7 +11,43 @@
           "thigh": "1",
           "upperArm": "1",
           "waist": "1",
-          "hips": "1"
+          "hips": "1",
+          "status": ""
+        },
+        {
+          "goalId": "f612cc3c-8b20-4606-a1eb-81446dfc2b4b",
+          "date": "Sat, 30 Sep 2017",
+          "weight": "0",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "0",
+          "waist": "1",
+          "hips": "1",
+          "description": "description",
+          "status": ""
+        },
+        {
+          "goalId": "37c2e901-963e-4c88-a0a8-3c11281fa0f0",
+          "date": "Sun, 01 Oct 2017",
+          "weight": "1",
+          "chest": "0",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "0",
+          "hips": "1",
+          "description": "description",
+          "status": ""
+        },
+        {
+          "goalId": "1fa608b9-1fa3-4d62-bdcb-3f59a01c4ce0",
+          "date": "Wed, 13 Sep 2017",
+          "weight": "1",
+          "chest": "1",
+          "thigh": "0",
+          "upperArm": "0",
+          "waist": "1",
+          "hips": "1",
+          "description": "description"
         }
       ]
     },
