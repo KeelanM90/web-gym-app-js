@@ -11,7 +11,8 @@
           "thigh": "1",
           "upperArm": "1",
           "waist": "1",
-          "hips": "1"
+          "hips": "1",
+          "trend": "green"
         },
         {
           "assessmentId": "53a149ba-6d0c-4300-9d46-d835177a36d2",
@@ -36,6 +37,16 @@
           "hips": 42,
           "comment": "Good job Homer!",
           "trend": "red"
+        },
+        {
+          "assessmentId": "5a1999f9-2ff1-45c8-a2c2-2290757223c8",
+          "date": "Thu, 07 Sep 2017 11:32:48 GMT",
+          "weight": "67",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1"
         }
       ]
     },
@@ -53,6 +64,21 @@
           "hips": "1",
           "trend": "red",
           "comment": "Tut tut!"
+        }
+      ]
+    },
+    {
+      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
+      "assessments": [
+        {
+          "assessmentId": "3df9fa9d-0553-4688-bb8c-810212c4ce66",
+          "date": "Thu, 07 Sep 2017 11:27:18 GMT",
+          "weight": "1",
+          "chest": "1",
+          "thigh": "1",
+          "upperArm": "1",
+          "waist": "1",
+          "hips": "1"
         }
       ]
     }
@@ -87,39 +113,25 @@
       "time": "11:11"
     },
     {
-      "bookingId": "59a2586a-f569-4562-b9c4-c853b6414e03",
-      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "20 Sep 2017",
-      "time": "10:01"
+      "bookingId": "a0ab50bf-11f8-4b4e-ac88-36a23b99bdcd",
+      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
+      "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
+      "date": "07 Sep 2017",
+      "time": "11:01"
     },
     {
-      "bookingId": "592f5e75-7aae-4c6b-af2c-a4586e5cd8c9",
-      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "bookingId": "ed0392f7-e420-466e-b65b-e02fd479ce1c",
+      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
       "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "13 Sep 2017",
-      "time": "11:00"
+      "date": "15 Sep 2017",
+      "time": "11:01"
     },
     {
-      "bookingId": "54731875-00f0-436a-b531-9f9a1dcf16f9",
-      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "bookingId": "cf4ad9e6-f7b2-4f92-b883-d7e6f1304cc2",
+      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
       "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "16 Nov 2017",
-      "time": "10:02"
-    },
-    {
-      "bookingId": "596532f8-9669-4e66-bbb6-5e5fefc85d97",
-      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "19 Oct 2017",
-      "time": "10:00"
-    },
-    {
-      "bookingId": "dde3d101-7bf7-4104-8b87-744f63397997",
-      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "20 Sep 2017",
-      "time": "09:59"
+      "date": "22 Sep 2017",
+      "time": "12:00"
     }
   ]
 }

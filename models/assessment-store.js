@@ -13,13 +13,22 @@ const assessmentStore = {
 
   getAssessments(memberId) {
     const assessments = this.store.findOneBy(this.collection, { memberId: memberId }).assessments;
-    let sortedAssessments = _.sortBy(assessments, 'date').reverse();
 
+    return assessments;
+  },
+
+  getSortedAssessments(memberId) {
+    const assessments = this.getAssessments(memberId);
+    let sortedAssessments =  _.orderBy(assessments, function (value) {
+          return new Date(value.date);
+        }).reverse()
+
+    ;
     return sortedAssessments;
   },
 
   getAssessmentsTrends(member, idealWeight) {
-    let assessments = this.getAssessments(member.id);
+    let assessments = this.getSortedAssessments(member.id);
     for (let i = 0; i < assessments.length; i++) {
       let lastWeight = member.weight;
       if (i < assessments.length - 1) {
@@ -65,11 +74,13 @@ const assessmentStore = {
   addAssessment(memberId, assessment) {
     const assessments = this.getAssessments(memberId);
     assessments.push(assessment);
+    logger.debug(assessments);
     this.store.save();
   },
 
   removeAssessment(memberId, assessmentId) {
     const assessments = this.getAssessments(memberId);
+    logger.debug('removing', assessmentId);
     _.remove(assessments, { assessmentId: assessmentId });
     this.store.save();
   },
@@ -90,7 +101,11 @@ const assessmentStore = {
   getMembersBookings(memberId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const membersBookings = _.filter(bookings, { memberId: memberId });
-    const sortedMembersBookings = _.orderBy(membersBookings, ['date', 'time']);
+    const sortedMembersBookings = _.orderBy(membersBookings, function (value) {
+            return new Date(value.date + ' ' + value.time);
+          })
+
+      ;
     return sortedMembersBookings;
   },
 
@@ -121,9 +136,24 @@ const assessmentStore = {
     }
   },
 
+  getBookingById(bookingId) {
+    const bookings = this.bookingStore.findAll(this.bookingCollection);
+    const booking = _.find(bookings, { bookingId: bookingId });
+    return booking;
+  },
+
+  updateBooking(bookingId, date, time) {
+    const bookings = this.bookingStore.findAll(this.bookingCollection);
+    const booking = _.find(bookings, { bookingId: bookingId });
+    booking.date = date;
+    booking.time = time;
+    this.bookingStore.save();
+  },
+
   removeBooking(bookingId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     _.remove(bookings, { bookingId: bookingId });
+    this.bookingStore.save();
   },
 };
 

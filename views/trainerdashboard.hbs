@@ -62,32 +62,65 @@
         </form>
     </div>
     <div class="segment column">
-        <table class="ui table">
-            <thead>
-            <tr>
-                <th> Member</th>
-                <th> Date</th>
-                <th> Time</th>
-                <th> Edit</th>
-                <th> Cancel</th>
-            </tr>
-            {{#each bookings}}
-                <tr>
-                    <td>{{getMemberName ../members memberId}}</td>
-                    <td>{{date}}</td>
-                    <td>{{time}}</td>
-                    <td>
-                        <a href="trainereditbooking/{{bookingId}}" class="ui blue icon button">
-                            <i class="pencil icon"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="trainercancelbooking/{{bookingId}}" class="ui red icon button">
-                            <i class="delete icon"></i>
-                        </a>
-                    </td>
-                </tr>
+        <div class="ui styled accordion">
+            <h2 class="ui header">
+                <div class="content">
+                    <i class="calendar icon"></i>
+                    Assessment Bookings
+                </div>
+            </h2>
+            {{# each bookings}}
+                <div class="title">
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <h3 class="ui header">
+                                <div style="padding: 0" class="content">
+                                    {{getMemberName ../members memberId}}
+                                    <div class="sub header"> {{date}} - {{time}}</div>
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="right aligned column">
+                            <a href="booking/{{bookingId}}" class="ui green icon button">
+                                <i class="checked calendar icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <form class="ui form" action="/trainereditbooking/{{bookingId}}" method="POST">
+                        <div class="three fields">
+                            <div class="ten wide field">
+                                <label> Date </label>
+                                <div class="ui fluid calendar" id="calendar{{bookingId}}">
+                                    <div class="ui input left icon">
+                                        <i class="calendar icon"></i>
+                                        <input type="text" placeholder="Date" name="sessiondate" value="{{date}}">
+                                    </div>
+                                </div>
+                                <script>
+                                    $('#calendar{{bookingId}}').calendar({
+                                        type: 'date',
+                                        minDate: new Date(),
+                                    });
+                                </script>
+                            </div>
+                            <div class="six wide field">
+                                <label> Start Time </label>
+                                <input type="time" value="{{time}}" name="starttime">
+                            </div>
+                            <div class="field">
+                                <label> &nbsp; </label>
+                                <button class="ui blue icon submit button">
+                                    <i class="edit icon"></i></button>
+                                <a href="trainercancelbooking/{{bookingId}}" class="ui red icon button">
+                                    <i class="delete calendar icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             {{/each}}
-        </table>
+        </div>
     </div>
 </div>

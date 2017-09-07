@@ -35,6 +35,9 @@ router.get('/unenrollall/:trainerid/:classid', classes.unenrollAll);
 
 router.post('/createbooking', dashboard.createBooking);
 router.post('/trainercreatebooking', trainerdashboard.createBooking);
+router.post('/trainereditbooking/:bookingid', trainerdashboard.editBooking);
+router.post('/performassessment/:bookingid', trainerdashboard.performAssessment);
+router.get('/booking/:bookingid', trainerdashboard.booking);
 router.get('/trainercancelbooking/:bookingid', trainerdashboard.cancelBooking);
 
 router.get('/trainerdashboard', trainerdashboard.index);

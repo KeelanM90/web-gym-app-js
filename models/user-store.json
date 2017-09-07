@@ -23,6 +23,16 @@
       "weight": "55",
       "assessmentssize": 1,
       "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504741408/os8jyuyirejkfajdcjcg.png"
+    },
+    {
+      "name": "Test",
+      "gender": "Male",
+      "email": "test@test.com",
+      "password": "secret",
+      "address": "123 Qwertyville Lane",
+      "height": "123",
+      "weight": "123",
+      "id": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae"
     }
   ],
   "trainers": [

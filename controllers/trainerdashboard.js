@@ -14,8 +14,8 @@ const trainerdashboard = {
     const loggedintrainer = accounts.getCurrentTrainer(request);
     const members = userstore.getAllMembers();
     for (let i = 0; i < members.length; i++) {
-      members[i].assessmentssize = assessmentstore.getAssessments(members[i].id).length;
-    };
+      members[i].assessmentssize = assessmentstore.getSortedAssessments(members[i].id).length;
+    }
 
     const viewData = {
       title: 'Gym App Trainer Dashboard',
@@ -33,12 +33,39 @@ const trainerdashboard = {
     const viewData = {
       title: 'Gym App Trainer Dashboard',
       member: member,
-      assessments: assessmentstore.getAssessments(memberId),
+      assessments: assessmentstore.getSortedAssessments(memberId),
       bmi: analyticshelper.calculateBMI(member),
       bmiCategory: analyticshelper.getBMICategory(member),
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(member),
     };
     response.render('viewmember', viewData);
+  },
+
+  booking(request, response) {
+    logger.info('Perform booking rendering');
+    const viewData = {
+      title: 'Perform Booking',
+      bookingId: request.params.bookingid,
+    };
+    response.render('booking', viewData);
+  },
+
+  performAssessment(request, response) {
+    const booking = assessmentstore.getBookingById(request.params.bookingid);
+    const assessment = {
+      assessmentId: uuid(),
+      date: dateformat(new Date(), 'ddd, dd mmm yyyy HH:MM:ss Z'),
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
+    };
+    logger.debug(assessment);
+    assessmentstore.addAssessment(booking.memberId, assessment);
+    assessmentstore.removeBooking(booking.bookingId);
+    response.redirect('/viewmember/' + booking.memberId);
   },
 
   updateComment(request, response) {
@@ -63,6 +90,14 @@ const trainerdashboard = {
       time: request.body.starttime,
     };
     assessmentstore.addBooking(booking);
+    response.redirect('/trainerdashboard');
+  },
+
+  editBooking(request, response) {
+    const bookingId = request.params.bookingid;
+    const date = dateformat(request.body.sessiondate, 'dd mmm yyyy');
+    const time = request.body.starttime;
+    assessmentstore.updateBooking(bookingId, date, time);
     response.redirect('/trainerdashboard');
   },
 
