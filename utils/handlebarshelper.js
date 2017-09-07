@@ -36,6 +36,14 @@ handlebars.registerHelper('getMemberName', function (members, memberId) {
   }
 });
 
+handlebars.registerHelper('getTrainerName', function (trainers, trainerId) {
+  for (let i = 0; i < trainers.length; i++) {
+    if (trainers[i].id == trainerId) {
+      return trainers[i].name;
+    }
+  }
+});
+
 handlebars.registerHelper('getClassButton', function (trainerId, thisClass, memberId) {
   const sessions = thisClass.sessions;
   let full = true;

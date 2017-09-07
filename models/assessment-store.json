@@ -15,7 +15,7 @@
         },
         {
           "assessmentId": "53a149ba-6d0c-4300-9d46-d835177a36d2",
-          "date": "Wed, 17 May 2017 16:00:00 GMT",
+          "date": "Wed, 30 Sep 2017 16:00:00 GMT",
           "weight": 134,
           "chest": 44,
           "thigh": 30,
@@ -52,7 +52,7 @@
           "waist": "1",
           "hips": "1",
           "trend": "red",
-          "comment": "Tut tut"
+          "comment": "Tut tut!"
         }
       ]
     }
@@ -77,7 +77,63 @@
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
       "date": "Wed, 06 Sep 2017",
-      "time": ""
+      "time": "11:12"
+    },
+    {
+      "bookingId": "cfef5703-480c-4ed0-8a84-f4f28bf3a720",
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "trainerId": "2b6f0989-7b7f-4a38-ad26-aa06b922d752",
+      "date": "Wed, 20 Sep 2017",
+      "time": "11:11"
+    },
+    {
+      "bookingId": "41ad7a48-4b8f-4e24-b39f-d7683a0260bf",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "Wed, 13 Sep 2017",
+      "time": "10:01"
+    },
+    {
+      "bookingId": "0c1ebe6c-731f-4d94-a462-67ba311b702f",
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "Wed, 13 Sep 2017",
+      "time": "09:15"
+    },
+    {
+      "bookingId": "ea421074-3391-4b88-9bca-6840cdf78da8",
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "Sun, 10 Sep 2017",
+      "time": "11:11"
+    },
+    {
+      "bookingId": "cba8c867-6267-43f0-bf23-1438792790af",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "Tue, 19 Sep 2017",
+      "time": "12:50"
+    },
+    {
+      "bookingId": "8d2decb7-8634-4050-8204-b493096cf773",
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "13 09 2017",
+      "time": "10:00"
+    },
+    {
+      "bookingId": "21789cb8-6aed-4ad4-8961-b38e905a4364",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "19 09 2017",
+      "time": "11:15"
+    },
+    {
+      "bookingId": "cbb90d4a-5e3c-467e-a9ce-a66141ec38be",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "14-09-2017",
+      "time": "11:11"
     }
   ]
 }

@@ -59,11 +59,11 @@ const trainerdashboard = {
       bookingId: uuid(),
       memberId: request.body.member,
       trainerId: trainer.id,
-      date: dateformat(request.body.sessiondate, 'ddd, dd mmm yyyy'),
+      date: dateformat(request.body.sessiondate, 'dd-mm-yyyy'),
       time: request.body.starttime,
     };
     assessmentstore.addBooking(booking);
-    response.redirect('/trainerdashboard/');
+    response.redirect('/trainerdashboard');
   },
 };
 

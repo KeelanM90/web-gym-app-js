@@ -3,14 +3,14 @@
     {
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Homer Simpson",
-      "gender": "Female",
+      "gender": "Male",
       "email": "homer@simpson.com",
       "password": "secret",
       "address": "Springfield, USA",
       "height": "1.72",
       "weight": "70",
       "assessmentssize": 3,
-      "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504362224/z32eo0sa9j4x4e6blqkg.png"
+      "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504741444/yj65uogh5trmanhrr8sp.png"
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -21,8 +21,8 @@
       "address": "Springfield, USA",
       "height": "1.6",
       "weight": "55",
-      "assessmentssize": 0,
-      "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504177866/k873fqwuzuip8nzn3yea.jpg"
+      "assessmentssize": 1,
+      "img": "http://res.cloudinary.com/dsyiy8hbm/image/upload/v1504741408/os8jyuyirejkfajdcjcg.png"
     }
   ],
   "trainers": [

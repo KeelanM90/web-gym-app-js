@@ -55,17 +55,39 @@
                 </div>
                 <div class="field">
                     <label> Start Time </label>
-                    <input type="time" id="starttime{{sessionId}}" value="{{starttime}}" name="starttime">
+                    <input type="time" name="starttime">
                 </div>
             </div>
             <button class="ui blue submit button">Add Booking</button>
         </form>
     </div>
-    <div class="column">
-        {{#each bookings}}
-            <div class="ui segment form">
-                {{getMemberName ../members memberId}}
-            </div>
-        {{/each}}
+    <div class="segment column">
+        <table class="ui table">
+            <thead>
+            <tr>
+                <th> Member</th>
+                <th> Date</th>
+                <th> Time</th>
+                <th> Edit</th>
+                <th> Delete</th>
+            </tr>
+            {{#each bookings}}
+                <tr>
+                    <td>{{getMemberName ../members memberId}}</td>
+                    <td>{{date}}</td>
+                    <td>{{time}}</td>
+                    <td>
+                        <a href="trainereditbooking/{{bookingId}}" class="ui blue icon button">
+                            <i class="pencil icon"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="trainerdeletebooking/{{bookingId}}" class="ui red icon button">
+                            <i class="trash icon"></i>
+                        </a>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
     </div>
 </div>

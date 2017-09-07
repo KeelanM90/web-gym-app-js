@@ -13,17 +13,9 @@ const assessmentStore = {
 
   getAssessments(memberId) {
     const assessments = this.store.findOneBy(this.collection, { memberId: memberId }).assessments;
-    if (assessments.length > 0) {
-      assessments.sort(function (a, b) {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
+    let sortedAssessments = _.sortBy(assessments, 'date').reverse();
 
-            return dateB - dateA;
-          }
-      );
-    }
-
-    return assessments;
+    return sortedAssessments;
   },
 
   getAssessmentsTrends(member, idealWeight) {
@@ -98,10 +90,11 @@ const assessmentStore = {
   getMembersBookings(memberId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const membersBookings = _.filter(bookings, { memberId: memberId });
-    if (bookings.length > 0) {
-      bookings.sort(function (a, b) {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
+    if (membersBookings.length > 0) {
+      membersBookings.sort(function (a, b) {
+            const dateA = new Date().setTime(a.date.getTime() + a.time);
+            const dateB = new Date().setTime(b.date.getTime() + b.time);
+            logger.info(dateA);
 
             return dateB - dateA;
           }
@@ -114,15 +107,6 @@ const assessmentStore = {
   getTrainersBookings(trainerId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const trainersBookings = _.filter(bookings, { trainerId: trainerId });
-    if (bookings.length > 0) {
-      bookings.sort(function (a, b) {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
-
-            return dateB - dateA;
-          }
-      );
-    }
 
     return trainersBookings;
   },
