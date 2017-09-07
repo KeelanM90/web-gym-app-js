@@ -106,18 +106,25 @@
       "time": "11:01"
     },
     {
-      "bookingId": "cf4ad9e6-f7b2-4f92-b883-d7e6f1304cc2",
-      "memberId": "fd835e63-961d-4b1a-8b5e-64a10e9eb3ae",
-      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
-      "date": "22 Sep 2017",
-      "time": "12:00"
-    },
-    {
       "bookingId": "0c1e78ff-0fcd-4ecf-8dc6-8600bea90cdc",
       "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
       "date": "20 Sep 2017",
+      "time": "13:11"
+    },
+    {
+      "bookingId": "c1bba209-91ac-4d54-a023-ccbc21a74be1",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "21 Sep 2017",
       "time": "11:11"
+    },
+    {
+      "bookingId": "c54b1f83-4244-4f6f-8d22-c38c08df132c",
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "trainerId": "3ad52697-6d98-4d80-8273-084de55a86c4",
+      "date": "20 Sep 2017",
+      "time": "12:11"
     }
   ]
 }

@@ -144,11 +144,22 @@ const assessmentStore = {
   },
 
   updateBooking(bookingId, date, time) {
-    const bookings = this.bookingStore.findAll(this.bookingCollection);
-    const booking = _.find(bookings, { bookingId: bookingId });
-    booking.date = date;
-    booking.time = time;
-    this.bookingStore.save();
+    const booking = this.getBookingById(bookingId);
+    const trainersBookings = this.getTrainersBookings(booking.trainerId);
+    let trainerIsBooked = false;
+    const bookingTime = new Date(date + ' ' + time);
+    for (let i = 0; i < trainersBookings.length; i++) {
+      const oldBookingStart = new Date(trainersBookings[i].date + ' ' + trainersBookings[i].time);
+      if (oldBookingStart.getTime() < (bookingTime.getTime() + 3600000) && oldBookingStart.getTime() > (bookingTime.getTime() - 3600000)) {
+        trainerIsBooked = true;
+      }
+    }
+
+    if (!trainerIsBooked) {
+      booking.date = date;
+      booking.time = time;
+      this.bookingStore.save();
+    }
   },
 
   removeBooking(bookingId) {
