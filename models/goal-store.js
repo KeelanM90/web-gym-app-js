@@ -11,7 +11,6 @@ const assessmentStore = {
 
   getGoals(memberId) {
     const goals = this.store.findOneBy(this.collection, { memberId: memberId }).goals;
-
     return goals;
   },
 

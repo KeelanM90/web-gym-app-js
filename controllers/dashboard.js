@@ -45,6 +45,40 @@ const dashboard = {
     response.redirect('/dashboard');
   },
 
+  goals(request, response) {
+    logger.info('Goals rendering');
+    const loggedInMember = accounts.getCurrentMember(request);
+    const viewData = {
+      title: 'Members Goals',
+      member: loggedInMember,
+      goals: goalstore.getSortedGoals(loggedInMember.id),
+    };
+    response.render('goals', viewData);
+  },
+
+  deleteAssessment(request, response) {
+    const memberId = request.params.memberid;
+    const assessmentId = request.params.assessmentid;
+    assessmentstore.removeAssessment(memberId, assessmentId);
+    response.redirect('/dashboard');
+  },
+
+  addGoal(request, response) {
+    const memberId = request.params.id;
+    const assessment = {
+      assessmentId: uuid(),
+      date: dateformat(new Date(), 'ddd, dd mmm yyyy'),
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
+    };
+    assessmentstore.addGoal(memberId, assessment);
+    response.redirect('/dashboard');
+  },
+
   createBooking(request, response) {
     const member = accounts.getCurrentMember(request);
     const booking = {
@@ -69,13 +103,6 @@ const dashboard = {
   cancelBooking(request, response) {
     const bookingId = request.params.bookingid;
     assessmentstore.removeBooking(bookingId);
-    response.redirect('/dashboard');
-  },
-
-  deleteAssessment(request, response) {
-    const memberId = request.params.memberid;
-    const assessmentId = request.params.assessmentid;
-    assessmentstore.removeAssessment(memberId, assessmentId);
     response.redirect('/dashboard');
   },
 };

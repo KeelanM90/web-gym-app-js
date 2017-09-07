@@ -45,6 +45,7 @@ router.get('/trainercancelbooking/:bookingid', trainerdashboard.cancelBooking);
 router.get('/trainerdashboard', trainerdashboard.index);
 router.get('/about', about.index);
 router.get('/profile', profile.index);
+router.get('/goals', dashboard.goals);
 router.get('/viewmember/:id', trainerdashboard.viewMember);
 
 router.post('/dashboard/:id/addAssessment', dashboard.addAssessment);

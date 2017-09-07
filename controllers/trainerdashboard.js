@@ -4,6 +4,7 @@ const accounts = require('./accounts');
 const logger = require('../utils/logger');
 const userstore = require('../models/user-store');
 const assessmentstore = require('../models/assessment-store');
+const goalstore = require('../models/goal-store');
 const analyticshelper = require('../utils/analyticshelper');
 const dateformat = require('dateformat');
 const uuid = require('uuid');
@@ -37,6 +38,7 @@ const trainerdashboard = {
       bmi: analyticshelper.calculateBMI(member),
       bmiCategory: analyticshelper.getBMICategory(member),
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(member),
+      goals: goalstore.getSortedGoals(memberId),
     };
     response.render('viewmember', viewData);
   },
