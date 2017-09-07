@@ -21,6 +21,7 @@ const dashboard = {
       bmi: analyticshelper.calculateBMI(loggedInMember),
       bmiCategory: analyticshelper.getBMICategory(loggedInMember),
       idealWeightIndicator: analyticshelper.isIdealBodyWeight(loggedInMember),
+      bookings: assessmentstore.getMembersBookings(loggedInMember.id),
     };
     response.render('dashboard', viewData);
   },
@@ -38,7 +39,7 @@ const dashboard = {
       hips: request.body.hips,
     };
     assessmentstore.addAssessment(memberId, assessment);
-    response.redirect('/dashboard/');
+    response.redirect('/dashboard');
   },
 
   createBooking(request, response) {
@@ -51,14 +52,28 @@ const dashboard = {
       time: request.body.starttime,
     };
     assessmentstore.addBooking(booking);
-    response.redirect('/dashboard/');
+    response.redirect('/dashboard');
+  },
+
+  editBooking(request, response) {
+    const bookingId = request.params.bookingid;
+    const date = dateformat(request.body.sessiondate, 'dd mmm yyyy');
+    const time = request.body.starttime;
+    assessmentstore.updateBooking(bookingId, date, time);
+    response.redirect('/dashboard');
+  },
+
+  cancelBooking(request, response) {
+    const bookingId = request.params.bookingid;
+    assessmentstore.removeBooking(bookingId);
+    response.redirect('/dashboard');
   },
 
   deleteAssessment(request, response) {
     const memberId = request.params.memberid;
     const assessmentId = request.params.assessmentid;
     assessmentstore.removeAssessment(memberId, assessmentId);
-    response.redirect('/dashboard/');
+    response.redirect('/dashboard');
   },
 };
 

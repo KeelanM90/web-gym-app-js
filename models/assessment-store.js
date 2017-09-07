@@ -122,10 +122,11 @@ const assessmentStore = {
 
   addBooking(booking) {
     const trainersBookings = this.getTrainersBookings(booking.trainerId);
-    const trainersBookingsOnDate = _.filter(trainersBookings, { date: booking.date });
     let trainerIsBooked = false;
-    for (let i = 0; i < trainersBookingsOnDate.length; i++) {
-      if (trainersBookingsOnDate[i].time === booking.time) {
+    const bookingTime = new Date(booking.date + ' ' + booking.time);
+    for (let i = 0; i < trainersBookings.length; i++) {
+      const oldBookingStart = new Date(trainersBookings[i].date + ' ' + trainersBookings[i].time);
+      if (oldBookingStart.getTime() < (bookingTime.getTime() + 3600000) && oldBookingStart.getTime() > (bookingTime.getTime() - 3600000)) {
         trainerIsBooked = true;
       }
     }
