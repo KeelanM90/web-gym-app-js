@@ -59,23 +59,16 @@ const trainerdashboard = {
       bookingId: uuid(),
       memberId: request.body.member,
       trainerId: trainer.id,
-      date: dateformat(request.body.sessiondate, 'dd/mm/yyyy'),
+      date: dateformat(request.body.sessiondate, 'dd mmm yyyy'),
       time: request.body.starttime,
     };
     assessmentstore.addBooking(booking);
     response.redirect('/trainerdashboard');
   },
 
-  deleteBooking(request, response) {
-    const trainer = accounts.getCurrentTrainer(request);
-    const booking = {
-      bookingId: uuid(),
-      memberId: request.body.member,
-      trainerId: trainer.id,
-      date: dateformat(request.body.sessiondate, 'dd-mm-yyyy'),
-      time: request.body.starttime,
-    };
-    assessmentstore.addBooking(booking);
+  cancelBooking(request, response) {
+    const bookingId = request.params.bookingid;
+    assessmentstore.removeBooking(bookingId);
     response.redirect('/trainerdashboard');
   },
 };

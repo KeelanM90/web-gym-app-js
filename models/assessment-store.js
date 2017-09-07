@@ -90,24 +90,18 @@ const assessmentStore = {
   getMembersBookings(memberId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const membersBookings = _.filter(bookings, { memberId: memberId });
-    if (membersBookings.length > 0) {
-      membersBookings.sort(function (a, b) {
-            const dateA = new Date().setTime(a.date.getTime() + a.time);
-            const dateB = new Date().setTime(b.date.getTime() + b.time);
-            logger.info(dateA);
-
-            return dateB - dateA;
-          }
-      );
-    }
-
-    return membersBookings;
+    const sortedMembersBookings = _.orderBy(membersBookings, ['date', 'time']);
+    return sortedMembersBookings;
   },
 
   getTrainersBookings(trainerId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const trainersBookings = _.filter(bookings, { trainerId: trainerId });
-    const sortedTrainersBookings = _.orderBy(trainersBookings, ['date', 'time']);
+    const sortedTrainersBookings = _.orderBy(trainersBookings, function (value) {
+          return new Date(value.date + ' ' + value.time);
+        })
+
+    ;
     return sortedTrainersBookings;
   },
 
@@ -125,6 +119,11 @@ const assessmentStore = {
       this.bookingStore.add(this.bookingCollection, booking);
       this.bookingStore.save();
     }
+  },
+
+  removeBooking(bookingId) {
+    const bookings = this.bookingStore.findAll(this.bookingCollection);
+    _.remove(bookings, { bookingId: bookingId });
   },
 };
 

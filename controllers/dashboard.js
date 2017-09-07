@@ -47,7 +47,7 @@ const dashboard = {
       bookingId: uuid(),
       memberId: member.id,
       trainerId: request.body.trainer,
-      date: dateformat(request.body.sessiondate, 'dd/mm/yyyy'),
+      date: dateformat(request.body.sessiondate, 'dd mmm yyyy'),
       time: request.body.starttime,
     };
     assessmentstore.addBooking(booking);

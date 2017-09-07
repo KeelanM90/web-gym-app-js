@@ -69,7 +69,7 @@
                 <th> Date</th>
                 <th> Time</th>
                 <th> Edit</th>
-                <th> Delete</th>
+                <th> Cancel</th>
             </tr>
             {{#each bookings}}
                 <tr>
@@ -82,8 +82,8 @@
                         </a>
                     </td>
                     <td>
-                        <a href="trainerdeletebooking/{{bookingId}}" class="ui red icon button">
-                            <i class="trash icon"></i>
+                        <a href="trainercancelbooking/{{bookingId}}" class="ui red icon button">
+                            <i class="delete icon"></i>
                         </a>
                     </td>
                 </tr>
