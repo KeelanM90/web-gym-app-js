@@ -25,14 +25,14 @@ const goalStore = {
     const assessments = assessmentstore.getSortedAssessments(memberId);
     for (let i = 0; i < sortedGoals.length; i++) {
       let goal = sortedGoals[i];
-      goal.status = 'pending';
+      goal.status = 'ongoing';
       const goalCloseDate = new Date(goal.date);
       const goalOpenDate = new Date(goalCloseDate);
       goalOpenDate.setDate(goalOpenDate.getDate() - 3);
       goalCloseDate.setTime(goalCloseDate.getTime() + 1000 * 3600 * 24 - 1);
 
       if (new Date() < goalOpenDate) {
-        goal.status = 'ongoing';
+        goal.status = 'pending';
       } else {
         for (let j = 0; j < assessments.length; j++) {
           const assessment = assessments[j];

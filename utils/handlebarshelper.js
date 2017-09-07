@@ -15,6 +15,27 @@ handlebars.registerHelper('selectionEquals', function (str1, str2) {
   }
 });
 
+handlebars.registerHelper('getLabel', function (string, trainer) {
+  if (string === 'achieved') {
+    return new handlebars.SafeString('<div class="ui fluid green label"> Achieved </div>');
+  } else if (string === 'missed') {
+    return new handlebars.SafeString('<div class="ui fluid red label"> Missed </div>');
+  } else if (string === 'pending') {
+    return new handlebars.SafeString('<div class="ui fluid yellow label"> Pending </div>');
+  } else if (string === 'ongoing') {
+    let url = '';
+    if (trainer) {
+      url = 'trainerdashboard';
+    } else {
+      url = 'dashboard';
+    }
+
+    const result = '<a href="/' + url + '" class="ui fluid blue label"><i class="ui plus icon"></i> Ongoing </a>';
+
+    return new handlebars.SafeString(result);
+  }
+});
+
 handlebars.registerHelper('getSessionButton', function (trainerId, parentClass, session, memberId) {
   const enrollments = session.enrollments;
   if (_.find(session.enrollments, { memberId: memberId }) != null) {
