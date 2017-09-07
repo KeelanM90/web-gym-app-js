@@ -25,18 +25,26 @@ const goalStore = {
     const assessments = assessmentstore.getSortedAssessments(memberId);
     for (let i = 0; i < sortedGoals.length; i++) {
       let goal = sortedGoals[i];
-      goal.status = 'missed';
+      goal.status = 'pending';
       const goalCloseDate = new Date(goal.date);
       const goalOpenDate = new Date(goalCloseDate);
       goalOpenDate.setDate(goalOpenDate.getDate() - 3);
       goalCloseDate.setTime(goalCloseDate.getTime() + 1000 * 3600 * 24 - 1);
 
-      for (let j = 0; j < assessments.length; j++) {
-        const assessmentDate = new Date(assessments[j].date);
-        if (assessmentDate <= goalCloseDate && assessmentDate >= goalOpenDate) {
-          goal.status = 'assessment found';
-          logger.debug(assessmentDate + ' < ' + goalCloseDate + ' - ' + assessmentDate + ' > ' + goalOpenDate);
-          break;
+      if (new Date() < goalOpenDate) {
+        goal.status = 'ongoing';
+      } else if (new Date() > goalOpenDate) {
+        for (let j = 0; j < assessments.length; j++) {
+          const assessment = assessments[j];
+          const assessmentDate = new Date(assessment.date);
+          if (assessmentDate <= goalCloseDate && assessmentDate >= goalOpenDate) {
+            if (assessment
+            break;
+          } else {
+            if (new Date() >= goalCloseDate) {
+              goal.status = 'missed';
+            }
+          }
         }
       }
     }

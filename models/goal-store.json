@@ -12,7 +12,7 @@
           "upperArm": "1",
           "waist": "1",
           "hips": "1",
-          "status": ""
+          "status": "assessment found"
         },
         {
           "goalId": "f612cc3c-8b20-4606-a1eb-81446dfc2b4b",
@@ -24,7 +24,7 @@
           "waist": "1",
           "hips": "1",
           "description": "description",
-          "status": ""
+          "status": "future"
         },
         {
           "goalId": "37c2e901-963e-4c88-a0a8-3c11281fa0f0",
@@ -36,7 +36,7 @@
           "waist": "0",
           "hips": "1",
           "description": "description",
-          "status": ""
+          "status": "future"
         },
         {
           "goalId": "1fa608b9-1fa3-4d62-bdcb-3f59a01c4ce0",
@@ -44,6 +44,30 @@
           "weight": "1",
           "chest": "1",
           "thigh": "0",
+          "upperArm": "0",
+          "waist": "1",
+          "hips": "1",
+          "description": "description",
+          "status": "future"
+        },
+        {
+          "goalId": "5df34609-5503-4d84-8298-afbf4c6b9fd6",
+          "date": "Thu, 07 Sep 2017",
+          "weight": "123",
+          "chest": "1",
+          "thigh": "12",
+          "upperArm": "321",
+          "waist": "312",
+          "hips": "312",
+          "description": "13223",
+          "status": "pending"
+        },
+        {
+          "goalId": "53dcd684-759f-4820-b7c1-dface8f7d43b",
+          "date": "Sun, 3 Sep 2017",
+          "weight": "0",
+          "chest": "0",
+          "thigh": "1",
           "upperArm": "0",
           "waist": "1",
           "hips": "1",
