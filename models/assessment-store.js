@@ -107,8 +107,8 @@ const assessmentStore = {
   getTrainersBookings(trainerId) {
     const bookings = this.bookingStore.findAll(this.bookingCollection);
     const trainersBookings = _.filter(bookings, { trainerId: trainerId });
-
-    return trainersBookings;
+    const sortedTrainersBookings = _.orderBy(trainersBookings, ['date', 'time']);
+    return sortedTrainersBookings;
   },
 
   addBooking(booking) {
